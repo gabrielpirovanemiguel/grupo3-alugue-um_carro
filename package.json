@@ -1,0 +1,25 @@
+{
+  "name": "grupo3-alugue-um_carro",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server --watch carrinhos.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielpirovanemiguel/grupo3-alugue-um_carro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gabrielpirovanemiguel/grupo3-alugue-um_carro/issues"
+  },
+  "homepage": "https://github.com/gabrielpirovanemiguel/grupo3-alugue-um_carro#readme",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
