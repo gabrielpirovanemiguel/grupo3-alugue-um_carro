@@ -150,13 +150,13 @@ body {
 }
 
 
-.col_2_footer_superior {
+.ancoras {
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
 
-.col_2_footer_superior h4 {
+.ancoras h4 {
     font-family: 'barlow condensed';
     font-weight: 900;
     font-size: 12px;
@@ -166,7 +166,7 @@ body {
 }
 
 
-.nav_bar_plataforma {
+.nav_bar_footer {
     display: flex;
     flex-direction: column;
     padding-top: 16px;
@@ -174,7 +174,7 @@ body {
     flex-wrap: nowrap;
 }
 
-.nav_bar_plataforma a {
+.nav_bar_footer a {
     text-decoration: none;
     color: var(--cor_fonte2);
     font-size: 14px;
@@ -182,7 +182,7 @@ body {
     line-height: 20px;
 }
 
-.nav_bar_plataforma a:nth-child(n+2) {
+.nav_bar_footer a:nth-child(n+2) {
     padding-top: 10px;
 }
 
