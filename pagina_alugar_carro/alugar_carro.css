@@ -85,8 +85,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    width: 246px;
     padding-bottom: 46px;
+    gap: 40px;
+}
+
+.footer_superior>div {
+    width: 236px;
 }
 
 #marca_footer {
@@ -145,6 +149,42 @@ body {
     color: var(--cor_fonte1);
 }
 
+
+.col_2_footer_superior {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.col_2_footer_superior h4 {
+    font-family: 'barlow condensed';
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    color: var(--cor_fonte2);
+}
+
+
+.nav_bar_plataforma {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.nav_bar_plataforma a {
+    text-decoration: none;
+    color: var(--cor_fonte2);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.nav_bar_plataforma a:nth-child(n+2) {
+    padding-top: 10px;
+}
 
 .footer_inferior {
     font-size: 12px;
