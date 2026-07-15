@@ -83,14 +83,14 @@ body {
 
 .footer_superior {
     display: flex;
-    flex-direction: row;
+    width: 100%;
     justify-content: start;
     padding-bottom: 46px;
     gap: 40px;
 }
 
 .footer_superior>div {
-    width: 236px;
+    width: 100%;
 }
 
 #marca_footer {
@@ -156,7 +156,7 @@ body {
     justify-content: start;
 }
 
-.ancoras h4 {
+.titulos_footer {
     font-family: 'barlow condensed';
     font-weight: 900;
     font-size: 12px;
@@ -185,6 +185,42 @@ body {
 .nav_bar_footer a:nth-child(n+2) {
     padding-top: 10px;
 }
+
+.lista_contatos_footer svg {
+    width: 12px;
+    height: 14px;
+}
+
+.lista_contatos_footer li:nth-child(3) svg {
+    width: 22px;
+    height: 22px;
+}
+
+.lista_contatos_footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.lista_contatos_footer li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: 10px;
+    color: var(--cor_fonte2);
+    font-family: 'inter';
+    font-size: 14px;
+    text-align: start;
+    line-height: 20px;
+}
+
+
+.lista_contatos_footer li:nth-child(n+2) {
+    padding-top: 10px;
+}
+
+
 
 .footer_inferior {
     font-size: 12px;
