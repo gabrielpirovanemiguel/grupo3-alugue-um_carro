@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alugar carro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Elite&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/templates/reset.css">
+    <link rel="stylesheet" href="/templates/root.css">
+    <link rel="stylesheet" href="./alugar_carro.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <span id="marca">
+            <svg width="32" height="32" viewBox="12 12 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                id="icone_header">
+                <path
+                    d="M12 24C12 17.3726 17.3726 12 24 12H32C38.6274 12 44 17.3726 44 24V32C44 38.6274 38.6274 44 32 44H24C17.3726 44 12 38.6274 12 32V24Z"
+                    fill="#2563EB" shape-rendering="crispEdges" />
+                <path
+                    d="M32.375 31.125H33.625C34 31.125 34.25 30.875 34.25 30.5V28.625C34.25 28.0625 33.8125 27.5625 33.3125 27.4375C32.1875 27.125 30.5 26.75 30.5 26.75C30.5 26.75 29.6875 25.875 29.125 25.3125C28.8125 25.0625 28.4375 24.875 28 24.875H23.625C23.25 24.875 22.9375 25.125 22.75 25.4375L21.875 27.25C21.7922 27.4914 21.75 27.7448 21.75 28V30.5C21.75 30.875 22 31.125 22.375 31.125H23.625"
+                    stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M24.875 32.375C25.5654 32.375 26.125 31.8154 26.125 31.125C26.125 30.4346 25.5654 29.875 24.875 29.875C24.1846 29.875 23.625 30.4346 23.625 31.125C23.625 31.8154 24.1846 32.375 24.875 32.375Z"
+                    stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M26.125 31.125H29.875" stroke="white" stroke-width="1.25" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path
+                    d="M31.125 32.375C31.8154 32.375 32.375 31.8154 32.375 31.125C32.375 30.4346 31.8154 29.875 31.125 29.875C30.4346 29.875 29.875 30.4346 29.875 31.125C29.875 31.8154 30.4346 32.375 31.125 32.375Z"
+                    stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span id="titulo_marca">
+                Carr<span id="in_titulo">{In}</span>hos
+            </span>
+
+        </span>
+        <nav id="nav_bar">
+            <a href="">Início</a>
+            <a href="">Catálogo</a>
+            <a href="">Reservas</a>
+            <a href="">Sobre</a>
+            <a href="">Contato</a>
+        </nav>
+        <a href="" id="btn_explorar">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.2916 9.20841H11.3749C11.6999 9.20841 11.9166 8.99175 11.9166 8.66675V7.04175C11.9166 6.55425 11.5374 6.12092 11.1041 6.01258C10.1291 5.74175 8.66659 5.41675 8.66659 5.41675C8.66659 5.41675 7.96242 4.65841 7.47492 4.17091C7.20409 3.95425 6.87909 3.79175 6.49992 3.79175H2.70825C2.38325 3.79175 2.11242 4.00841 1.94992 4.27925L1.19159 5.85008C1.11986 6.05929 1.08325 6.27892 1.08325 6.50008V8.66675C1.08325 8.99175 1.29992 9.20841 1.62492 9.20841H2.70825"
+                    stroke="white" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M3.79159 10.2917C4.38989 10.2917 4.87492 9.80664 4.87492 9.20833C4.87492 8.61002 4.38989 8.125 3.79159 8.125C3.19328 8.125 2.70825 8.61002 2.70825 9.20833C2.70825 9.80664 3.19328 10.2917 3.79159 10.2917Z"
+                    stroke="white" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4.875 9.20825H8.125" stroke="white" stroke-width="1.08333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path
+                    d="M9.20833 10.2917C9.80664 10.2917 10.2917 9.80664 10.2917 9.20833C10.2917 8.61002 9.80664 8.125 9.20833 8.125C8.61002 8.125 8.125 8.61002 8.125 9.20833C8.125 9.80664 8.61002 10.2917 9.20833 10.2917Z"
+                    stroke="white" stroke-width="1.08333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            Explorar
+        </a>
+    </header>
+</body>
+
+</html>

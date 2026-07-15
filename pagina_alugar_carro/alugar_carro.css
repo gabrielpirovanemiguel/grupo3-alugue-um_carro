@@ -1,0 +1,70 @@
+body {
+    font-family: 'inter';
+}
+
+.header {
+    min-height: 65px;
+    background-color: var(--cor_primaria);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--cor_quartenaria);
+}
+
+#icone_header {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.5));
+}
+
+#marca {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+}
+
+#titulo_marca {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--cor_fonte1);
+}
+
+#in_titulo {
+    color: var(--cor_terciaria);
+}
+
+#nav_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+#nav_bar a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    color: var(--cor_fonte2);
+}
+
+#btn_explorar {
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: var(--cor_terciaria);
+    color: var(--cor_fonte1);
+    padding: 8px 16px;
+    border-radius: 16px;
+}
+
+#btn_explorar svg {
+    width: 18px;
+    height: 18px;
+}
