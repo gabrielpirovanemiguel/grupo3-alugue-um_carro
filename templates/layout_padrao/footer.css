@@ -5,6 +5,8 @@
     background-color: var(--cor_primaria);
     padding: 64px 24px;
     margin-top: auto;
+    background-color: #2563EB26;
+    border-top: 1px solid #2563EB26;
 }
 
 .footer_superior {
