@@ -253,6 +253,10 @@ main {
 
 }
 
+.desativado {
+    opacity: 0.4;
+}
+
 .total {
     border-top: 1px solid #2563EB26;
     padding-top: 12px;
