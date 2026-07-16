@@ -1,0 +1,89 @@
+main {
+    padding: 0 24px;
+}
+
+.sessao_superior {
+    padding-top: 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.titulo p:first-child {
+    font-family: Cousine;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--cor_3);
+}
+
+.titulo h1 {
+    padding-top: 8px;
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-style: Black;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: var(--cor_7);
+}
+
+.titulo p:last-child {
+    padding-top: 8px;
+    font-family: Cousine;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: var(--cor_6);
+}
+
+.filtro {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.pesquisa_filtro input {
+    width: 384px;
+    height: 42px;
+    border-radius: 16px;
+    border: 1px solid #2563EB26;
+    background-color: var(--cor_2);
+}
+
+.pesquisa_filtro input::placeholder {
+    font-family: Cousine;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    padding-left: 41px;
+}
+
+.botao_filtro {
+    padding: 8px 14px;
+    font-family: Cousine;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: var(--cor_6);
+    border-radius: 16px;
+    background-color: var(--cor_2);
+    border: 1px solid #2563EB26;
+}
+
+.ativo {
+    box-shadow: 0px 0px 12px 0px #2563EB59;
+    background-color: var(--cor_3);
+    color: var(--cor_5);
+}
