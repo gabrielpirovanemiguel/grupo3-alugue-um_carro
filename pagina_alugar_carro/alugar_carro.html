@@ -14,10 +14,65 @@
     <header id="header" class="header">
     </header>
     <main>
-        <div>lor</div>
+        <div class="titulo">
+            <p>RESERVA</p>
+            <h1>RESERVAR VEÍCULO</h1>
+        </div>
+        <section class="form_imagem">
+            <form action="" class="form">
+                <div class="container_form">
+                    <h2>Dados Pessoais</h2>
+                    <div class="form_linha">
+                        <div>
+                            <label for="nome">NOME COMPLETO</label>
+                            <input type="text" name="nome" id="nome">
+                        </div>
+                        <div>
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" id="cpf">
+                        </div>
+                    </div>
+                    <div class="form_linha">
+                        <div>
+                            <label for="email">E-MAIL</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <label for="telefone">TELEFONE</label>
+                            <input type="text" name="telefone" id="telefone">
+                        </div>
+                    </div>
+                </div>
+                <div class="container_form">
+                    <h2>Dados da Reserva</h2>
+                    <div class="form_linha">
+                        <div>
+                            <label for="veiculo">VEÍCULO</label>
+                            <input type="text" name="veiculo" id="veiculo">
+                        </div>
+                        <div>
+                            <label for="local_devolucao">LOCAL DE DEVOLUÇÃO</label>
+                            <input type="text" name="local_devolucao" id="local_devolucao">
+                        </div>
+                    </div>
+                    <div class="form_linha">
+                        <div>
+                            <label for="data_retirada">DATA DE RETIRADA</label>
+                            <input type="date" name="data_retirada" id="data_retirada">
+                        </div>
+                        <div>
+                            <label for="data_devolucao">DATA DE DEVOLUÇÃO</label>
+                            <input type="date" name="data_devolucao" id="data_devolucao">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="CONFIRMAR RESERVAR" id="btn_reservar">
+            </form>
+        </section>
     </main>
 
     <footer id="footer" class="footer"></footer>
     <script type="module" src="/templates/layout_padrao/aplicar_layout_padrao.js"></script>
 </body>
+
 </html>

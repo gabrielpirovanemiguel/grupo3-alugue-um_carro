@@ -1,0 +1,127 @@
+main {
+    flex: 1;
+    background-color: var(--cor_1);
+    padding: 31px 68px 176px 68px;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.titulo p {
+    font-family: 'cousine';
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    color: var(--cor_3);
+    padding-top: 31px;
+    padding-bottom: 8px;
+}
+
+.titulo h1 {
+    font-family: 'barlow Condensed';
+    font-weight: 900;
+    font-style: Black;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: var(--cor_5);
+}
+
+/* FORM E IMAGEM */
+
+.form_imagem {
+    padding-top: 40px;
+    width: 976px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 68%;
+
+}
+
+.form h2 {
+    font-family: 'barlow Condensed';
+    font-weight: 900;
+    font-style: Black;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: var(--cor_5);
+    padding-bottom: 20px;
+}
+
+#btn_reservar {
+    width: 100%;
+    height: 60px;
+    font-family: 'inter';
+    font-weight: 900;
+    font-style: Black;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
+    background: var(--cor_3);
+    color: var(--cor_5);
+    border: none;
+    border-radius: 16px;
+
+}
+
+.container_form form:nth-child(2) {
+    padding: 24px 0;
+}
+
+.container_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--cor_2);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #2563EB26
+}
+
+.form_linha {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+}
+
+.form_linha div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form_linha label {
+    padding-bottom: 6px;
+    font-family: 'cousine';
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    color: var(--cor_6);
+
+}
+
+.form_linha input {
+    width: 100%;
+    height: 42px;
+    padding: 10px 16px;
+    opacity: 1;
+    border: 1px solid #2563EB26;
+    border-radius: 16px;
+    background-color: #141D30;
+}
