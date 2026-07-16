@@ -137,7 +137,7 @@ export const htmlFooter = `
                                 stroke="#2563EB" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span>Av. Cinematográfica, 1985 ㅤ ㅤ  ㅤVila Ficção — São Paulo, SP</span>
+                        <span>Av. Cinematográfica, 1985 ㅤ ㅤ ㅤ  ㅤVila Ficção — São Paulo, SP</span>
                     </li>
                 </ul>
             </div>

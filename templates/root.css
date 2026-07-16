@@ -1,9 +1,9 @@
 :root {
-    --cor_primaria: #090f1b;
-    --cor_secundaria: #0D1322;
-    --cor_terciaria: #2563EB;
-    --cor_quartenaria: #2563EB26;
-    --cor_fonte1: white;
-    --cor_fonte2: #64748B;
-    --cor_fonte3: #F1F5F9;
+    --cor_1: #090f1b;
+    --cor_2: #0D1322;
+    --cor_3: #2563EB;
+    --cor_4: #2563EB26;
+    --cor_5: white;
+    --cor_6: #64748B;
+    --cor_7: #F1F5F9;
 }

@@ -1,12 +1,12 @@
 .header {
     min-height: 65px;
-    background-color: var(--cor_primaria);
+    background-color: var(--cor_1);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
-    border-bottom: 1px solid var(--cor_quartenaria);
+    border-bottom: 1px solid var(--cor_4);
 }
 
 #icone_header {
@@ -26,11 +26,11 @@
 #titulo_marca {
     font-size: 20px;
     font-weight: 900;
-    color: var(--cor_fonte1);
+    color: var(--cor_5);
 }
 
 #in_titulo {
-    color: var(--cor_terciaria);
+    color: var(--cor_3);
 }
 
 #nav_bar {
@@ -44,7 +44,7 @@
     text-decoration: none;
     font-size: 14px;
     padding: 8px 16px;
-    color: var(--cor_fonte2);
+    color: var(--cor_6);
 }
 
 #btn_explorar {
@@ -54,8 +54,8 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    background-color: var(--cor_terciaria);
-    color: var(--cor_fonte1);
+    background-color: var(--cor_3);
+    color: var(--cor_5);
     padding: 8px 16px;
     border-radius: 16px;
 }
