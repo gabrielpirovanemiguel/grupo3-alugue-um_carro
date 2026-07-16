@@ -1,6 +1,7 @@
 import {obterCarroPorId,
         calcularDiasEntreDatas,
-        atualizarSpanResumo
+        atualizarSpanResumo,
+        atualizarLocatorio
 
 } from '/templates/js/funcoes.js';
 
@@ -14,16 +15,23 @@ const valorTotal = document.getElementById('valor_total');
 const spanValorTotal = document.getElementById('span_total');
 const formulario = document.querySelector('.form');
 const inputsData = document.querySelector('.inputs_data');
-const calcularValor = function(dias, valorDiario) { 
-    const valorTotal = dias * valorDiario; 
-    return valorTotal; 
-}
+const inputNome = document.getElementById('nome');
+const inputCpf = document.getElementById('cpf');
+const inputEmail = document.getElementById('email');
+const inputTelefone = document.getElementById('telefone');
+const inputLocalDevolucao = document.getElementById('local_devolucao');
 const dataRetirada = document.getElementById('data_retirada');
 const dataDevolucao = document.getElementById('data_devolucao');
 
 
+let id = 9;
+const calcularValor = function(dias, valorDiario) { 
+    const valorTotal = dias * valorDiario; 
+    return valorTotal; 
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
-    const dados = await obterCarroPorId(9);
+    const dados = await obterCarroPorId(id);
     if (dados.status_disponibilidade === 'alugado') {
         //TODO
     }
@@ -40,10 +48,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-formulario.addEventListener('submit', function(e) {
+formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const dias = calcularDiasEntreDatas(dataRetirada.value, dataDevolucao.value);
-    console.log(dias);
+    const locatario = {
+        nome_locatorio: inputNome.value,
+        cpf_locatorio: inputCpf.value,
+        emai_locatorio: inputEmail.value,
+        telefone_locatorio: inputTelefone.value,
+        local_retirada: inputLocalDevolucao.value,
+        data_retirada: dataRetirada.value,
+        data_devolucao: dataDevolucao.value
+    }
+    const dadosAtualizados = {
+        locatario: locatario,
+        status_disponibilidade: 'alugado'
+    }
+    try {
+        await atualizarLocatorio(dadosAtualizados, id);
+        alert("Aluguel confirmado com sucesso!");
+    } catch (erro) {
+        alert("Não foi possível concluir o aluguel. Tente novamente.");
+        console.error(erro);
+    }
+    
 });
 
 //Refatorar
