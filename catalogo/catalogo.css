@@ -80,6 +80,11 @@ main {
     border-radius: 16px;
     background-color: var(--cor_2);
     border: 1px solid #2563EB26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .ativo {
