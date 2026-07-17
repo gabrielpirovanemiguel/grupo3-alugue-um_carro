@@ -17,7 +17,7 @@ export function atualizarSpanResumo(valor, span) {
 }
 
 export function fazerCard(carro) {
-            const htmlCard = `
+    const htmlCard = `
             <div class="card">
                 <figure class="imagem_card">
                     <img src="${carro.url_imagem}" alt="">
@@ -41,10 +41,10 @@ export function fazerCard(carro) {
                         <span>R$${carro.valor_aluguel_dia}</span>
                     </span>
                     <span class="alugar_card">
-                        ${carro.status_disponibilidade === 'disponivel' ? ' <a href="" class="btn_alugar">Alugar</a>':
-                            '<a href="" class="btn_alugar indisponivel">Indisponível</a>' 
-                            
-                        }
+                        ${carro.status_disponibilidade === 'disponivel' ? ' <a href="" class="btn_alugar">Alugar</a>' :
+            '<a href="" class="btn_alugar indisponivel">Indisponível</a>'
+
+        }
                         <button class="icone_alugar">
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -65,26 +65,33 @@ export function fazerCard(carro) {
                 </div>
             </div>
         `
-        return htmlCard;
+    return htmlCard;
 }
 
-export function adicionarBotoesPaginacao(totalPaginas, container, pagina) {
+export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVoltar, btnAvancar) {
     const url = `http://127.0.0.1:5500/catalogo/catalogo.html`;
     container.innerHTML = '';
+    btnVoltar.classList.remove('desativado');
+    btnAvancar.classList.remove('desativado');
     if (totalPaginas === 1) {
         container.innerHTML = `<a class="btn_numero" href="${url}?pagina=1">1</a>`;
-        return true;
+        btnVoltar.classList.add('desativado');
+        btnAvancar.classList.add('desativado');
+        return;
     }
-    for(let i=0; i < totalPaginas; i++) {
-        if(i+1 == pagina) {
-            container.insertAdjacentHTML('beforeend',`<a class="btn_numero ativado" href="${url}?pagina=${i+1}">${i+1}</a>`);
-            console.log('teste');
+    for (let i = 0; i < totalPaginas; i++) {
+        if (i + 1 == pagina) {
+            if (i + 2 > totalPaginas) {
+                btnAvancar.classList.add('desativado');
+            } else if (i - 1 < 0) {
+                btnVoltar.classList.add('desativado');
+            }
+            container.insertAdjacentHTML('beforeend', `<a class="btn_numero ativado" href="${url}?pagina=${i + 1}">${i + 1}</a>`);
         } else {
-            container.insertAdjacentHTML('beforeend',`<a class="btn_numero" href="${url}?pagina=${i+1}">${i+1}</a>`);
+            container.insertAdjacentHTML('beforeend', `<a class="btn_numero" href="${url}?pagina=${i + 1}">${i + 1}</a>`);
         }
-        
+
     }
-    return false;
 }
 
 export async function pesquisarPagina(pagina) {
