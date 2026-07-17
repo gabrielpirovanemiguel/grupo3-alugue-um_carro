@@ -38,11 +38,12 @@ export function fazerCard(carro) {
                     </span>
                     <span class="valor_card">
                         <span>por dia</span>
-                        <span>${carro.valor_aluguel_dia}</span>
+                        <span>R$${carro.valor_aluguel_dia}</span>
                     </span>
                     <span class="alugar_card">
-                        ${carro.status_disponibilidade === 'Alugado' ? ' <a href="" class="btn_alugar">Alugar</a>':
-                            '<a href="" class="btn_alugar indisponivel">Indisponível</a>'
+                        ${carro.status_disponibilidade === 'disponivel' ? ' <a href="" class="btn_alugar">Alugar</a>':
+                            '<a href="" class="btn_alugar indisponivel">Indisponível</a>' 
+                            
                         }
                         <button class="icone_alugar">
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none"

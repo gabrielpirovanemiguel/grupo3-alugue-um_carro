@@ -16,7 +16,7 @@ export async function obterCarroPorId(id) {
 }
 
 export async function obterCarrosPaginado(pagina=1) {
-        const limite = 11;
+        const limite = 12;
         try {
         const response = await fetch(`${urlBase}?_page=${pagina}&_limit=${limite}`);
         if (!response.ok) {
