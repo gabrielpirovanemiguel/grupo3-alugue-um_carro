@@ -87,3 +87,167 @@ main {
     background-color: var(--cor_3);
     color: var(--cor_5);
 }
+
+.sessao_cards {
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    height: 376px;
+    background-color: var(--cor_2);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.imagem_card {
+    position: relative;
+}
+
+.imagem_card img {
+    width: 100%;
+    height: 192px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.75;
+}
+
+.imagem_card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 192px;
+    background: linear-gradient(0deg, #0D1322 0%, rgba(13, 19, 34, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.tag {
+    z-index: 100;
+    position: absolute;
+    left: 12px;
+    bottom: 11px;
+    color: #FFB900;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #FE9A001A;
+    border-radius: 16px;
+    border: 1px solid #FE9A0033
+}
+
+.tag svg {
+    width: 7.9px;
+    height: 7.9px;
+}
+
+.texto_card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.titulo_card h3 {
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-style: Black;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: var(--cor_7);
+    padding-bottom: 2px;
+}
+
+.titulo_card p {
+    font-family: Cousine;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: var(--cor_6);
+    padding-bottom: 12px;
+}
+
+.valor_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.valor_card span:first-child {
+    padding-top: 2px;
+    font-family: Cousine;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: var(--cor_6);
+}
+
+.valor_card span:last-child {
+    font-family: Cousine;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: var(--cor_3);
+}
+
+.alugar_card {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding-top: 12px;
+    gap: 8px;
+    flex: 1;
+}
+
+.btn_alugar {
+    text-decoration: none;
+    width: 258.328125px;
+    height: 36;
+    opacity: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 16px;
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    background-color: var(--cor_3);
+    color: var(--cor_7);
+}
+
+.indisponivel {
+    color: var(--cor_6);
+    background-color: var(--cor_8);
+}
+
+.icone_alugar {
+    width: 41px;
+    height: 33px;
+    border: 1px solid #2563EB26;
+    border-radius: 16px;
+}
+
+.paginas {
+    padding: 80px 0;
+}
