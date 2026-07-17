@@ -15,10 +15,16 @@ export async function obterCarroPorId(id) {
     }
 }
 
-export async function obterCarrosPaginado(pagina = 1) {
+export async function obterCarrosPaginado(pagina = 1, query=null) {
     const limite = 12;
     try {
-        const response = await fetch(`${urlBase}?_page=${pagina}&_limit=${limite}`);
+        let response;
+        if (!query) {
+            response = await fetch(`${urlBase}?_page=${pagina}&_limit=${limite}`);
+        }else {
+            response = await fetch(`${urlBase}?_page=${pagina}&_limit=${limite}&${query}`);
+        }
+
         if (!response.ok) {
             throw new Error("Ocorreu um erro: ", response.status);
         }
@@ -36,26 +42,6 @@ export async function obterCarrosPaginado(pagina = 1) {
     }
 }
 
-export async function obterCarrosPaginadoFiltrado(query, pagina = 1) {
-    const limite = 12;
-    try {
-        const response = await fetch(`${urlBase}?_page=${pagina}&_limit=${limite}&${query}`);
-        if (!response.ok) {
-            throw new Error("Ocorreu um erro: ", response.status);
-        }
-        const carros = await response.json();
-        const totalCarros = response.headers.get("X-Total-Count");
-        return {
-            dados: carros,
-            pagina,
-            totalCarros: parseInt(totalCarros),
-            totalPaginas: Math.ceil(totalCarros / limite)
-        };
-    } catch (erro) {
-        console.error("Ocorreu um erro ao buscar os carros: ", erro);
-        throw erro;
-    }
-}
 
 export async function atualizarLocatorio(locatorio, id) {
     try {

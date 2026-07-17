@@ -85,12 +85,14 @@ main {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    animation: ease-in-out(0.7s);
 }
 
 .ativo {
     box-shadow: 0px 0px 12px 0px #2563EB59;
     background-color: var(--cor_3);
     color: var(--cor_5);
+    animation: ease-in-out(0.7s);
 }
 
 .sessao_cards {

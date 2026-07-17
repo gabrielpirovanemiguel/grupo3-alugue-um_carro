@@ -69,12 +69,11 @@ export function fazerCard(carro) {
 }
 
 export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVoltar, btnAvancar) {
-    const url = `http://127.0.0.1:5500/catalogo/catalogo.html`;
     container.innerHTML = '';
     btnVoltar.classList.remove('desativado');
     btnAvancar.classList.remove('desativado');
     if (totalPaginas === 1) {
-        container.innerHTML = `<a class="btn_numero" href="${url}?pagina=1">1</a>`;
+        container.innerHTML = `<button class="btn_numero desativado">1</button>`;
         btnVoltar.classList.add('desativado');
         btnAvancar.classList.add('desativado');
         return;
@@ -86,15 +85,15 @@ export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVol
             } else if (i - 1 < 0) {
                 btnVoltar.classList.add('desativado');
             }
-            container.insertAdjacentHTML('beforeend', `<a class="btn_numero ativado" href="${url}?pagina=${i + 1}">${i + 1}</a>`);
+            container.insertAdjacentHTML('beforeend', `<button class="btn_numero ativado">${i + 1}</button>`);
         } else {
-            container.insertAdjacentHTML('beforeend', `<a class="btn_numero" href="${url}?pagina=${i + 1}">${i + 1}</a>`);
+            container.insertAdjacentHTML('beforeend', `<button class="btn_numero">${i + 1}</button>`);
         }
 
     }
 }
 
-export async function pesquisarPagina(pagina) {
+export async function pesquisarPagina(pagina, acao) {
     const url = `http://127.0.0.1:5500/catalogo/catalogo.html?pagina=${pagina}`;
     const response = await fetch(url);
     return response.json();
