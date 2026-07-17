@@ -241,11 +241,9 @@ main {
     background-color: var(--cor_8);
 }
 
-.icone_alugar {
-    width: 41px;
-    height: 33px;
-    border: 1px solid #2563EB26;
-    border-radius: 16px;
+
+.alugar_card:has(.indisponivel) {
+    pointer-events: none;
 }
 
 .paginas {
