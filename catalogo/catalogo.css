@@ -236,6 +236,11 @@ main {
     color: var(--cor_7);
 }
 
+.seta:disabled {
+    opacity: 0.7;
+    cursor:not-allowed;
+}
+
 .indisponivel {
     color: var(--cor_6);
     background-color: var(--cor_8);
@@ -266,7 +271,16 @@ main {
     flex: 1;
 }
 
-.paginas>button {
+.btn_paginas {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+
+.btn_numero, .btn_voltar, .btn_avancar {
+    text-decoration: none;
     background-color: var(--cor_3);
     color: var(--cor_7);
     padding: 8px 0;
@@ -280,4 +294,9 @@ main {
     letter-spacing: 0px;
     text-align: center;
     border-radius: 16px;
+}
+
+.ativado {
+    background-color: var(--cor_2);
+    border: 1px solid #2563EB26;
 }

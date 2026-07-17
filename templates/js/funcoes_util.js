@@ -67,3 +67,28 @@ export function fazerCard(carro) {
         `
         return htmlCard;
 }
+
+export function adicionarBotoesPaginacao(totalPaginas, container, pagina) {
+    const url = `http://127.0.0.1:5500/catalogo/catalogo.html`;
+    container.innerHTML = '';
+    if (totalPaginas === 1) {
+        container.innerHTML = `<a class="btn_numero" href="${url}?pagina=1">1</a>`;
+        return true;
+    }
+    for(let i=0; i < totalPaginas; i++) {
+        if(i+1 == pagina) {
+            container.insertAdjacentHTML('beforeend',`<a class="btn_numero ativado" href="${url}?pagina=${i+1}">${i+1}</a>`);
+            console.log('teste');
+        } else {
+            container.insertAdjacentHTML('beforeend',`<a class="btn_numero" href="${url}?pagina=${i+1}">${i+1}</a>`);
+        }
+        
+    }
+    return false;
+}
+
+export async function pesquisarPagina(pagina) {
+    const url = `http://127.0.0.1:5500/catalogo/catalogo.html?pagina=${pagina}`;
+    const response = await fetch(url);
+    return response.json();
+}
