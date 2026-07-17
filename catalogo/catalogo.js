@@ -12,6 +12,7 @@ const btnPaginas = document.querySelector('.btn_paginas');
 const btnSetas = document.querySelectorAll('.seta');
 const btnNumeros = document.querySelectorAll('.btn_numero');
 const containerFiltro = document.querySelector('.filtro');
+const btnFiltro = document.querySelectorAll('.botao_filtro');
 var paginaAtual;
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -34,15 +35,21 @@ btnPaginas.addEventListener('click', async function (event) {
 containerFiltro.addEventListener('click', async function (event) {
     if (event.target.classList.contains('categoria')) {
         paginaAtual = 1;
+        desfocarBotoes(btnFiltro);
         await injetarFiltrado(`categoria=${event.target.value}`);
+        event.target.classList.add('ativo')
         return;
     } else if (event.target.classList.contains('botao_filtro')) {
         paginaAtual = 1;
         if(event.target.value === 'indisponivel') {
+            desfocarBotoes(btnFiltro);
             await injetarFiltrado('status_disponibilidade=alugado&status_disponibilidade=manuntencao');
+            event.target.classList.add('ativo');
             return;
         }
+        desfocarBotoes(btnFiltro);
         await injetarFiltrado('status_disponibilidade=disponivel');
+        event.target.classList.add('ativo')
         return;
     } return;
 
@@ -78,4 +85,10 @@ async function injetarFiltrado(query, pagina) {
         sessaoCards.insertAdjacentHTML('beforeend', card);
     });
     adicionarBotoesPaginacao(response.totalPaginas, btnPaginas, pagina, btnSetas[0], btnSetas[1]);
+}
+
+function desfocarBotoes(botoes) {
+    botoes.forEach(botao => {
+        botao.classList.remove('ativo');
+    })
 }
