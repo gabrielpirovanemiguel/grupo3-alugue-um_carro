@@ -114,6 +114,31 @@
 
 }
 
+.tag_destaques{
+    width: 125px;
+    height: 26px;
+    border-radius: 340282001837565600000000000000000000000px;
+    border-width: 1px;
+    display: flex;
+    position: absolute;
+    bottom: 4px;
+    left: 12px;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #FFB900;
+    background: #FE9A001A;
+    border-top: 1px solid #FE9A0033
+
+
+
+}
+
 .card_destaques_topo{
     
     width: 90%;

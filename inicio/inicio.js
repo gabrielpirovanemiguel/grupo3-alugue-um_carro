@@ -58,6 +58,7 @@ async function carregarDadosDestaques() {
         let cardDestaques = '';
 
         veiculosDestaque.forEach((carro,index) => {
+            
             const precoFormatado = Number(carro.valor_aluguel_dia).toLocaleString       ('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
@@ -92,6 +93,9 @@ async function carregarDadosDestaques() {
             <div class="card_veiculos">
                 <div class="card_imagem_destaques"> 
                     <img src="${carro.url_imagem}" alt="${carro.nome}">
+                    <div class="tag_destaques">
+                        <i class="ph-fill ph-star"></i> #${index + 1} da semana
+                    </div>
                     <div class = "card_destaques_topo">
                         <span class="tag_categoria ${classeCorCategoria}"><i class="ph ${iconeCategoria}"></i> ${nomeCategoria}</span> 
                         ${tagStatus}
