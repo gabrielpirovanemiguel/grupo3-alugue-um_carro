@@ -154,7 +154,7 @@ async function carregarDadosProcurados(){
             const estaDisponivel = carro.status_disponibilidade === 'disponivel';
             const tagStatus = estaDisponivel 
                 ? `<span class="tag_disponivel">● Disponível</span>` 
-                : `<span class="tag_indisponivel">● Indisponível</span>;`
+                : `<span class="tag_indisponivel">● Indisponível</span>`;
             
             cardProcurados += `
                 <div class="card_procurados">
@@ -166,15 +166,17 @@ async function carregarDadosProcurados(){
                             <p>${carro.universo_origem}</p>
                         </div>
                     </div>
-                    <span class="tag_categoria ${classeCorCategoria}">
-                        <i class="ph ${iconeCategoria}"></i> ${nomeCategoria}
-                    </span>
-                    ${tagStatus}
-                    <span class="preco_procurados">R$ ${carro.valor_aluguel_dia}/dia</span>
-                    
-                    <a href="#" class="seta_procurados">
-                        <i class="ph ph-caret-right"></i>
-                    </a>
+                    <div class="informacoes_direita_procurados">
+                        <span class="tag_categoria ${classeCorCategoria}">
+                            <i class="ph ${iconeCategoria}"></i> ${nomeCategoria}
+                        </span>
+                        ${tagStatus}
+                        <span class="preco_procurados">R$ ${carro.valor_aluguel_dia}/dia</span>
+                        
+                        <a href="#" class="seta_procurados">
+                            <i class="ph ph-caret-right"></i>
+                        </a>
+                    </div>
                 </div>
             `  
         });
