@@ -1,0 +1,297 @@
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    height: 3055px;
+    background-color: #080C14;
+
+}
+
+.introducao{
+    width: 100%;
+    height: 856px;
+    
+    background: linear-gradient(135deg, #162456 50%,#080C14 , #080C14 );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 190px;
+    
+
+}
+
+.conteudo_introducao{
+    width: 500px;
+    height: 665px;
+    padding-top: 30px;
+    padding-left: 24px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+}
+
+.subtitulo_inicial{
+    width: 500px;
+    height: 61px;
+    color: #2563EB;
+
+}
+
+.subtitulo_inicial span{
+    width: 274px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px ;
+    gap: 3.5px;
+    border-radius: 34px;
+    border-width: 1px;
+
+    background: #2563EB1A;
+    border-top: 1px solid #2563EB4D;
+    font-size: 14px;
+    line-height: 16px;
+    
+
+
+}
+
+.subtitulo_inicial p{
+    width: 5.25px;
+    height: 6.75px;
+    border-width: 0.75px;
+
+    display: flex;
+    align-items: center;
+    padding-right: 19px;
+    
+    
+}
+.conteudo_introducao h1{
+    width: 600px;
+    height: 288px;
+    font-size: 72px;
+    color: white;
+}
+
+.texto_azul{
+    color: #2563EB;
+}
+
+.descricao_introducao{
+    width: 448px;
+    height: 111px;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    color: #64748B;
+    font-size: 18px;
+}
+
+.botoes_introducao{
+    width: 500px;
+    height: 94px;
+    padding-top: 40px;
+
+}
+
+.explorar_veiculos{
+    width: 215px;
+    height: 52px;
+    gap: 8px;
+    border-radius: 16px;
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    background: #2563EB;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.saiba_mais{
+    width: 142px;
+    height: 54px;
+    gap: 8px;
+    left: 230.69px;
+    border-radius: 16px;
+    border-width: 1px;
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    border-top: 1px solid #2563EB26;
+    text-decoration: none;
+    color: #64748B;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.explorar_veiculos:hover{
+    background-color: #1b2bbb;
+    transform: scale(1.05);
+}
+
+.saiba_mais:hover{
+    background-color: #1b2bbb;
+    transform: scale(1.05); 
+}
+
+.estatisticas_introducao{
+    width: 500px;
+    height: 112px;
+    display: flex;
+    gap: 40px;
+    padding-top: 56px;
+
+}
+
+.estats{
+    width: 126px;
+    height: 56px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.numero_introducao{
+    width: 42px;
+    height: 36px;
+    font-size: 30px;
+    color: #2563EB;
+
+}
+
+.estats_frases{
+    width: 123px;
+    height: 16px;
+    font-size: 14px;
+    color: #64748B;
+
+}
+
+.introducao_imagens{
+    width:  500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:12px;
+    margin-right: 100px;    
+    
+}
+
+.card_imagem_banner{
+    position: relative;
+    width: 100%;
+
+    border-radius: 16px;
+    overflow: hidden; 
+    
+
+    
+}
+
+.card_imagem_banner:nth-child(1){
+    width: 244px;
+    height: 218px;
+
+}
+
+.card_imagem_banner:nth-child(2){
+    width: 244px;
+    height: 178px;
+    
+
+}
+
+.card_imagem_banner:nth-child(3){
+    width: 244px;
+    height: 178px;
+
+
+}
+
+.card_imagem_banner:nth-child(4){
+    width: 244px;
+    height: 218px;
+    margin-top: -40px;
+    
+   
+}
+
+.card_imagem_banner img {
+    width: 100%;
+    height: 100%;
+    display: block;  /* N coloquei um cover aqui pq tava cortando muito as imagens*/
+    
+    
+}
+
+.card_info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background: linear-gradient(0deg, rgba(13, 19, 34, 0.95) 0%, rgba(13, 19, 34, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+
+}
+
+.card_info h4{
+    width: 100%;
+    height: 22px;
+    padding-bottom: 4px;
+    color: white;
+
+}
+
+.tag_disponivel{
+    width: 107px;
+    height: 26px;
+    gap: 6px;
+
+    border-radius: 340282001837565600000000000000000000000px;
+    border-width: 1px;
+    
+    background: #00BC7D1A;
+    border-top: 1px solid #00BC7D40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00D492;
+
+
+}
+
+.tag_indisponivel{
+    width: 121px;
+    height: 26px;
+    gap: 6px;
+    opacity: 1;
+    top: 3px;
+    border-radius: 340282001837565600000000000000000000000px;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FB2C361A;
+    border-top: 1px solid #FB2C3640;
+    color: #FF6467;
+
+
+
+}
+
+
+
+
