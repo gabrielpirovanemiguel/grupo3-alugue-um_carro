@@ -32,6 +32,8 @@
 
 }
 .header_reservas h2{
+    font-family: Barlow Condensed;
+    font-weight: 900;
     width: 976px;
     height: 68px;
     padding-top: 8px;
@@ -60,7 +62,7 @@
     border-width: 1px;
     padding: 20px;
     background: #0D1322;
-    border-top: 1px solid #2563EB26;
+    border: 1px solid #2563EB26;
     display: flex;
     justify-content: space-between;
     align-items: center;
