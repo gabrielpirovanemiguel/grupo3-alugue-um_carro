@@ -86,15 +86,37 @@ export async function pesquisarNome(pagina, termo, query = null) {
 
 export async function obterCarrosAlugados() {
     try {
-        let response = await fetch(`${urlBase}?status_disponibilidade=alugado`); 
+        let response = await fetch(`${urlBase}?status_disponibilidade=alugado`);
         if (!response.ok) throw new Error(`Ocorreu um erro: ${response.status}`);
         const carros = await response.json();
         carros.sort((carro1, carro2) =>
             new Date(carro1.locatario.data_inicio_aluguel) - new Date(carro2.locatario.data_devolucao_prevista)
         );
+
         return carros;
     } catch (erro) {
         console.error("Ocorreu um erro ao buscar os carros alugados: ", erro);
+        throw erro;
+    }
+}
+
+export async function cancelarReserva(id) {
+    try {
+        let carro = await obterCarroPorId(id);
+        carro.locatario.nome = '';
+        const response = await fetch(
+            `${urlBase}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(carro)
+        });
+        if (!response.ok) throw new Error("Ocorreu um erro: ", response.status);
+        const carroAlterado = await response.json();
+        return carroAlterado;
+    } catch (erro) {
+        console.error("Ocorreu um erro ao cancelar reserva: ", erro);
         throw erro;
     }
 }
