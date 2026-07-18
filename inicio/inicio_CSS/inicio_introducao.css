@@ -14,7 +14,7 @@ body{
     width: 100%;
     height: 856px;
     
-    background: linear-gradient(135deg, #162456 50%,#080C14 , #080C14 );
+    background: radial-gradient(circle at 15% 20%, #141D33 0%, #060913 60%); /*A cor do figma estava buggada*/
     display: flex;
     justify-content: space-between;
     align-items: center;
