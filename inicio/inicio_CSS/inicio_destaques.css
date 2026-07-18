@@ -28,6 +28,7 @@
 
 .titulos_destaques span{
     color: #2563EB;
+    font-family: cousine;
 
 }
 
@@ -38,6 +39,8 @@
     font-size: 48px;
     color: #FFFFFF;
     display: flex;
+    font-family: barlow condensed;
+    font-weight: 900;
 
 }
 
@@ -142,6 +145,7 @@
     justify-content: center;
     align-items: center;
     color: #FFB900;
+    font-family: cousine;
 
 }
 
@@ -162,6 +166,7 @@
     justify-content: center;
     align-items: center;
     color: #3891f8;
+    font-family: cousine;
 
 }
 
@@ -182,6 +187,7 @@
     justify-content: center;
     align-items: center;
     color: #3b036b;
+    font-family: cousine;
 
 }
 
@@ -204,6 +210,8 @@
 .texto_veiculos h3{
     font-size: 20px;
     color: #F1F5F9;
+    font-family: barlow condensed;
+    font-weight: 700;
 
 }
 
@@ -231,6 +239,7 @@
 .preco_veiculo h4{
     font-size: 24px;
     color: #2563EB;
+    font-family: cousine;
 
 }
 
