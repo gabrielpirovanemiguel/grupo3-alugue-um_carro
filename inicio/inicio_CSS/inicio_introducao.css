@@ -42,7 +42,7 @@ body{
 }
 
 .subtitulo_inicial span{
-    width: 274px;
+    width: 350px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -55,6 +55,7 @@ body{
     border-top: 1px solid #2563EB4D;
     font-size: 14px;
     line-height: 16px;
+    font-family: cousine;
     
 
 
@@ -74,8 +75,14 @@ body{
 .conteudo_introducao h1{
     width: 600px;
     height: 288px;
-    font-size: 72px;
     color: white;
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-style: Black;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -1.8px;
+
 }
 
 .texto_azul{
@@ -165,6 +172,7 @@ body{
     height: 36px;
     font-size: 30px;
     color: #2563EB;
+    font-weight: 900;
 
 }
 
@@ -256,7 +264,8 @@ body{
 }
 
 .tag_disponivel{
-    width: 107px;
+    width: auto;
+    max-width: 120px;
     height: 26px;
     gap: 6px;
 
@@ -269,6 +278,8 @@ body{
     align-items: center;
     justify-content: center;
     color: #00D492;
+    font-family: cousine;
+    font-size: 12px;
 
 
 }
@@ -287,6 +298,8 @@ body{
     background: #FB2C361A;
     border-top: 1px solid #FB2C3640;
     color: #FF6467;
+    font-family: cousine;
+    font-size: 12px;
 
 
 
