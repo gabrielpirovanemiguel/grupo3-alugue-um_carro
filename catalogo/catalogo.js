@@ -1,4 +1,4 @@
-import { obterCarrosPaginado} from '/templates/js/funcoes_api.js';
+import { obterCarrosPaginado, pesquisarNome} from '/templates/js/funcoes_api.js';
 import {
     fazerCard,
     adicionarBotoesPaginacao,
@@ -13,7 +13,9 @@ const btnSetas = document.querySelectorAll('.seta');
 const btnNumeros = document.querySelectorAll('.btn_numero');
 const containerFiltro = document.querySelector('.filtro');
 const btnFiltro = document.querySelectorAll('.botao_filtro');
+const inputFiltro = document.querySelector('#nome_filtro');
 var paginaAtual;
+var termoPesquisa;
 var query;
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -30,15 +32,21 @@ btnPaginas.addEventListener('click', async function (event) {
     if (!event.target.classList.contains('btn_numero')) return;
     event.preventDefault();
     paginaAtual = parseInt(event.target.textContent);
-    await injetar(paginaAtual, query);
+    await injetar(paginaAtual, query, termoPesquisa);
 });
+
+inputFiltro.addEventListener('input', async function (event) {
+    const valor = event.target.value.trim();
+    valor === ''? termoPesquisa = null: termoPesquisa = valor;
+    await injetar(paginaAtual, query, termoPesquisa);
+})
 
 containerFiltro.addEventListener('click', async function (event) {
     if (event.target.classList.contains('categoria')) {
         paginaAtual = 1;
         desfocarBotoes(btnFiltro);
         query = `categoria=${event.target.value}`;
-        await injetar(paginaAtual, query);
+        await injetar(paginaAtual, query, termoPesquisa);
         event.target.classList.add('ativo');
         return;
     } else if (event.target.classList.contains('botao_filtro')) {
@@ -46,18 +54,18 @@ containerFiltro.addEventListener('click', async function (event) {
         if (event.target.value === 'indisponivel') {
             desfocarBotoes(btnFiltro);
             query = 'status_disponibilidade=alugado&status_disponibilidade=manuntencao';
-            await injetar(paginaAtual, query);
+            await injetar(paginaAtual, query, termoPesquisa);
             event.target.classList.add('ativo');
         } else if (event.target.value === 'disponivel') {
             desfocarBotoes(btnFiltro);
             query = 'status_disponibilidade=disponivel';
-            await injetar(paginaAtual, query);
+            await injetar(paginaAtual, query, termoPesquisa);
             event.target.classList.add('ativo')
             
         } else {
             desfocarBotoes(btnFiltro);
             event.target.classList.add('ativo');
-            injetar(paginaAtual);
+            injetar(paginaAtual, query, termoPesquisa);
         }
         return;
 
@@ -76,8 +84,14 @@ sessaoPagina.addEventListener('click', async function (event) {
     } else return;
 })
 
-async function injetar(pagina, query=null) {
-    const response = await obterCarrosPaginado(pagina, query);
+async function injetar(pagina, query=null, nomePesquisa=null) {
+    let response;
+    if(nomePesquisa){
+        response = await pesquisarNome(pagina, nomePesquisa, query)
+        termoPesquisa = nomePesquisa
+    } else {
+        response = await obterCarrosPaginado(pagina, query);
+    }
     sessaoCards.innerHTML = '';
     response.dados.forEach(carro => {
         const card = fazerCard(carro);
@@ -85,6 +99,7 @@ async function injetar(pagina, query=null) {
     });
     adicionarBotoesPaginacao(response.totalPaginas, btnPaginas, pagina, btnSetas[0], btnSetas[1]);
 }
+
 
 
 

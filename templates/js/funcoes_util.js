@@ -77,6 +77,10 @@ export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVol
         btnVoltar.classList.add('desativado');
         btnAvancar.classList.add('desativado');
         return;
+    } else if(totalPaginas === 0) {
+        btnVoltar.style.display = 'none';
+        btnAvancar.style.display = 'nome';
+        return;
     }
     for (let i = 0; i < totalPaginas; i++) {
         if (i + 1 == pagina) {
