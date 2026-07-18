@@ -50,8 +50,13 @@
     width: 204px;
     height: 36px;
     padding-top: 16px;
-    font-size: 14px;
     color: #F1F5F9;
+    font-family: Barlow Condensed;
+    font-weight: 700;
+    
+    font-size: 14px;
+    
+
 
 }
 
