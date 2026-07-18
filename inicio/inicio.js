@@ -122,3 +122,70 @@ async function carregarDadosDestaques() {
 }
 
 carregarDadosDestaques();
+
+async function carregarDadosProcurados(){
+    try {
+        const resposta = await fetch('http://localhost:3001/carros');
+        const veiculos = await resposta.json();
+
+        const procuradosContainer = document.getElementById('container_cards_procurados');
+
+        const veiculosProcurados  = veiculos.slice(3,8);
+
+        let cardProcurados  = '';
+
+        veiculosProcurados.forEach((carro,index) =>{
+            const numeroFormatado = String(index +1).padStart(2,'0')
+            
+            let iconeCategoria = 'ph-video-camera'; 
+            let nomeCategoria = 'Filme';
+            let classeCorCategoria = 'tag_filme';
+
+            if (carro.categoria === 'desenho') {
+            iconeCategoria = 'ph-star'; 
+                nomeCategoria = 'Desenho';
+                classeCorCategoria = 'tag_desenho'; 
+            } else if (carro.categoria === 'série') {
+                iconeCategoria = 'ph-television'; 
+                nomeCategoria = 'Série';
+                classeCorCategoria = 'tag_serie'; 
+            }
+
+            const estaDisponivel = carro.status_disponibilidade === 'disponivel';
+            const tagStatus = estaDisponivel 
+                ? `<span class="tag_disponivel">● Disponível</span>` 
+                : `<span class="tag_indisponivel">● Indisponível</span>;`
+            
+            cardProcurados += `
+                <div class="card_procurados">
+                    <span class="numero_ranking_procurados">${numeroFormatado}</span>
+                    <div class="info_procurados">
+                        <img src="${carro.url_imagem}" alt="${carro.nome}">
+                        <div class="info_procurados_texto">
+                            <h4>${carro.nome}</h4>
+                            <p>${carro.universo_origem}</p>
+                        </div>
+                    </div>
+                    <span class="tag_categoria ${classeCorCategoria}">
+                        <i class="ph ${iconeCategoria}"></i> ${nomeCategoria}
+                    </span>
+                    ${tagStatus}
+                    <span class="preco_procurados">R$ ${carro.valor_aluguel_dia}/dia</span>
+                    
+                    <a href="#" class="seta_procurados">
+                        <i class="ph ph-caret-right"></i>
+                    </a>
+                </div>
+            `  
+        });
+        procuradosContainer.innerHTML=cardProcurados
+
+
+    } catch (error){
+        console.error("Erro ao carregar os veículos:", error);
+
+    }
+}
+
+carregarDadosProcurados();
+
