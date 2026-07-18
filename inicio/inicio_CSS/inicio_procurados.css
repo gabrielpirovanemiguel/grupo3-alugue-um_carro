@@ -21,12 +21,15 @@
 .header_procurados span{
     color: #FFB900;
     font-size: 12px;
+    font-family: cousine;
 
 }
 
 .header_procurados h2{
     font-size: 48px;
     color: #FFFFFF;
+    font-family: barlow condensed;
+    font-weight: 900;
 }
 
 .header_procurados p{
@@ -71,6 +74,7 @@
     height: 48px;
     font-size: 50px;
     color: #2563EB33;
+    font-weight: 900;
 
 
 }
@@ -125,6 +129,7 @@
 .preco_procurados{
     font-size: 14px;
     color: #2563EB;
+    font-family: cousine;
 
 }
 

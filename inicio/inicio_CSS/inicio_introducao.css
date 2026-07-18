@@ -268,6 +268,7 @@ body{
     max-width: 120px;
     height: 26px;
     gap: 6px;
+    padding: 7px;
 
     border-radius: 340282001837565600000000000000000000000px;
     border-width: 1px;
