@@ -58,6 +58,11 @@ async function carregarDadosDestaques() {
         let cardDestaques = '';
 
         veiculosDestaque.forEach((carro,index) => {
+            const precoFormatado = Number(carro.valor_aluguel_dia).toLocaleString       ('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            
             let iconeCategoria = 'ph-video-camera'; 
             let nomeCategoria = 'Filme';
             let classeCorCategoria = 'tag_filme';
@@ -100,7 +105,7 @@ async function carregarDadosDestaques() {
                     </div>
                     <div class="preco_veiculo">
                         <span>por dia</span>
-                        <h4>R$ ${carro.valor_aluguel_dia}</h4>
+                        <h4>${precoFormatado}</h4>
                     </div>
 
                     <div class="botoes_destaques">
@@ -135,6 +140,10 @@ async function carregarDadosProcurados(){
         let cardProcurados  = '';
 
         veiculosProcurados.forEach((carro,index) =>{
+            const precoFormatado = Number(carro.valor_aluguel_dia).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
             const numeroFormatado = String(index +1).padStart(2,'0')
             
             let iconeCategoria = 'ph-video-camera'; 
@@ -171,7 +180,7 @@ async function carregarDadosProcurados(){
                             <i class="ph ${iconeCategoria}"></i> ${nomeCategoria}
                         </span>
                         ${tagStatus}
-                        <span class="preco_procurados">R$ ${carro.valor_aluguel_dia}/dia</span>
+                        <span class="preco_procurados">${precoFormatado}/dia</span>
                         
                         <a href="#" class="seta_procurados">
                             <i class="ph ph-caret-right"></i>
