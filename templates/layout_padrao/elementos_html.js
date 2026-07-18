@@ -25,8 +25,8 @@ export const htmlHeader = `
             <a href="">Início</a>
             <a href="">Catálogo</a>
             <a href="">Reservas</a>
-            <a href="">Sobre</a>
-            <a href="">Contato</a>
+            <a href="/Sobre/Sobre.html">Sobre</a>
+            <a href="/Contato/Contato.html">Contato</a>
         </nav>
         <a href="" id="btn_explorar">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
