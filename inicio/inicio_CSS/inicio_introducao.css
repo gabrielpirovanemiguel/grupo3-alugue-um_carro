@@ -5,7 +5,7 @@
 
 body{
     width: 100%;
-    height: 3055px;
+    height: auto;
     background-color: #080C14;
 
 }
@@ -263,7 +263,7 @@ body{
     border-radius: 340282001837565600000000000000000000000px;
     border-width: 1px;
     
-    background: #00BC7D1A;
+    background: #00bc7d57;
     border-top: 1px solid #00BC7D40;
     display: flex;
     align-items: center;
@@ -291,6 +291,7 @@ body{
 
 
 }
+
 
 
 

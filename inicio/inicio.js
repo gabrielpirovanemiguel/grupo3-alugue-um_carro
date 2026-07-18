@@ -53,7 +53,7 @@ async function carregarDadosDestaques() {
 
         const destaques_container = document.getElementById("card_destaques_container");
 
-        const veiculosDestaque = veiculos.slice(0,4);
+        const veiculosDestaque = veiculos.slice(3,7);
 
         let cardDestaques = '';
 
@@ -103,9 +103,9 @@ async function carregarDadosDestaques() {
                         <h4>R$ ${carro.valor_aluguel_dia}</h4>
                     </div>
 
-                    <div>
+                    <div class="botoes_destaques">
                         ${botaoAcao}
-                        <button><i class="ph-ph-calendar-blank"></i></button>
+                        <button class="botao_calendario"><i class="ph ph-calendar-blank"></i></button>
                     </div>
                 
                 </div>
