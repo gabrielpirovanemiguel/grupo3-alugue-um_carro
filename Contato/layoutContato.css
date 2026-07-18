@@ -1,0 +1,300 @@
+/*Fundo do body*/
+.contato {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1200px;
+    min-height: 707px;
+    margin: 0 auto;
+    padding: 60px 24px 40px 24px;
+    box-sizing: border-box;
+    background-color: #080C14;
+    min-height: 700px;
+}
+
+/*TITULO---------------------------------------------------*/
+.topo_contato {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.topo_contato .subtitulo {
+    color: #2563EB;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: Cousine;
+    font-style: normal;
+    letter-spacing: 1.2px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.topo_contato .titulo {
+    margin-top: 8px;
+    font-family: Barlow Condensed;
+    font-weight: 900 ;
+    color: #F1F5F9;
+    font-size: 60px;
+    line-height: 60px;
+}
+
+/*PARTE DAS DUAS COLUNAS: FORMULARIO E INFORMAÇÕES-------------------------------------*/
+.conteudo_contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+}
+
+/*FORMULARIO- LADO ESQUERDO*/
+.formulario {
+    flex: 1.2;
+    background-color: #0D1322;
+    border: 1px solid var(--cor_4);
+    border-radius: 16px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/*INFORMACAO- LADO DIREITO*/
+.info_contato {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 644px;
+    width: 401px;
+}
+
+/*lado esquerdo*/
+.conteudo_contato {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+/*PARTE DENTRO DO FOMRULARIO----------*/
+#formulario_contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome_email {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.campo label {
+    font-family: 'Cousine', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 1px;
+}
+
+.campo input,
+.campo textarea {
+    background-color: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #F1F5F9;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #2563EB;
+}
+
+.campo textarea {
+    resize: none;
+}
+
+/* Botão azul do formulário */
+.botao_enviar {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.botao_enviar:hover {
+    background-color: #1D4ED8;
+}
+
+/*COLUNA DA DIREITA-INFO e MAPA--------------------------------------------------- */
+.info_contato {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card Individual de cada informação*/
+.info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #0D1322;
+    border: 1px solid #1E293B;
+    border-radius: 12px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 92px;
+}
+
+/* Círculo de fundo pro ícone */
+.icone_circulo {
+    width: 44px;
+    height: 44px;
+    background-color: #0F172A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* SVG posicionado dentro do círculo azul */
+.info svg {
+    position: absolute;
+    left: 36px;
+    z-index: 2;
+}
+
+.texto_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.titulo_info {
+    font-family: 'Cousine', monospace;
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dado_info {
+    font-family: Inter;
+    font-size: 14px;
+    color: #F1F5F9;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/*Design do mapa azul ------------------------------------------------------------*/
+.mapa {
+    background-color: #0D1322;
+    border: 1px solid rgb(30 41 59 / 15%);
+    border-radius: 12px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mapa_design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* O Círculo Azul com Brilho*/
+.marcador_brilhante {
+    width: 54px;
+    height: 54px;
+    background-color: #2563EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
+}
+
+.mapa_texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.nome_empresa {
+    font-family: 'Cousine', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2563EB;
+    letter-spacing: 0.5px;
+}
+
+.local_empresa {
+    font-family: 'Cousine', monospace;
+    font-size: 12px;
+    color: #64748B;
+}
+
+/*Iframe que fica escondido por padrão------*/
+.mapa_mapa {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+/*Revelar o Mapa ao passar o Mouse--------*/
+.mapa:hover .mapa_design {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.mapa:hover .mapa_mapa {
+    opacity: 1;
+    z-index: 3;
+}
