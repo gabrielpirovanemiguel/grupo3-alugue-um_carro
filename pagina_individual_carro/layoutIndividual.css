@@ -1,0 +1,286 @@
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.pagina_individual {
+    width: 100%;
+    height: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.conteudo_veiculo {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+
+.coluna_imagem_carro {
+    flex: 1.2;
+}
+
+.coluna_informacoes_carro {
+    flex: 1;
+}
+
+.index {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-family: Cousine;
+    letter-spacing: 1.2px;
+    font-weight: normal;
+}
+
+.index a {
+    color: #64748B;
+    text-decoration: none;
+}
+
+.index a::after {
+    content: ">";
+    margin-left: 8px;
+    color: #64748B;
+}
+
+#index_carro {
+    color: #2563EB;
+    font-size: 12px;
+}
+
+.imagem_carro {
+    position: relative;
+    width: 100%;
+}
+
+.imagem_carro img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+}
+
+.imagem_carro > span, #categoria {
+    position: absolute;
+    top: 16px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: Cousine;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#categoria {
+    left: 16px;
+    background-color: #2B7FFF1A;
+    border: 1px solid #2B7FFF40;
+    color: #51A2FF;
+    backdrop-filter: blur(4px);
+}
+
+#icone_categoria {
+    width: 6px;
+    height: 6px;
+    background-color: #51A2FF;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.imagem_carro #status_carro {
+    right: 16px;
+    font-family: Cousine;
+    background-color: #00BC7D1A;
+    border: 1px solid #00BC7D40;
+    color: #00D492;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#icone_status {
+    width: 6px;
+    height: 6px;
+    background-color: #00D492;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.coluna_informacoes_carro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#nome_carro {
+    font-family: "Barlow Condensed";
+    font-size: 60px;
+    font-style: black;
+    color: #F1F5F9;
+    font-weight: 900;
+}
+
+#subtitulo_carro {
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    color: #64748B;
+    padding-top: 8px;
+}
+
+#descricao_carro {
+    font-family: Inter;
+    font-size: 14px;
+    color: #F1F5F9CC;
+    padding-top: 24px;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+}
+
+.valores_carro {
+    background-color: #0D1322;
+    border: 1px solid #2563EB26;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 32px;
+}
+
+.valor_principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.valor_texto {
+    font-family: Cousine;
+    font-size: 12px;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    color: #64748B;
+}
+
+.status_carro {
+    font-family: Cousine;
+    font-size: 12px;
+    background-color: #00BC7D1A;
+    border: 1px solid #00BC7D40;
+    color: #00D492;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.status_carro::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #00D492;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.preco_carro {
+    font-family: Inter;
+    font-size: 48px;
+    font-style: black;
+    font-weight: 900;
+    color: #2563EB;
+}
+
+.grupo_botoes {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.botao_reservar {
+    flex: 1.8;
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    height: 50px;
+}
+
+.botao_reservar:hover {
+    background-color: #0D1322;
+}
+
+.botao_agenda {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao_agenda svg {
+    width: 100%;
+    height: 100%;
+}
+
+.especificacoes {
+    margin-top: 32px;
+}
+
+.especificacoes h2 {
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-style: black;
+    font-size: 12px;
+    color: #64748B;
+    margin-bottom: 16px;
+    letter-spacing: 1.2px;
+}
+
+.quadrados_informações {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.quadrado_especificacao {
+    background-color: #0D1322;
+    border: 1px solid #2563EB26;
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tipo_especificacao {
+    font-family: Cousine;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: #64748B;
+}
+
+.dado_especificacao {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    color: #F1F5F9;
+}
