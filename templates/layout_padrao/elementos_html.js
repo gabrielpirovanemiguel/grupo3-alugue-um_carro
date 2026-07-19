@@ -22,9 +22,9 @@ export const htmlHeader = `
             </span>
         </span>
         <nav id="nav_bar">
-            <a href="">Início</a>
-            <a href="">Catálogo</a>
-            <a href="">Reservas</a>
+            <a href="/inicio/inicio.html">Início</a>
+            <a href="/catalogo/catalogo.html">Catálogo</a>
+            <a href="/reservas/reservas.html">Reservas</a>
             <a href="">Sobre</a>
             <a href="">Contato</a>
         </nav>
