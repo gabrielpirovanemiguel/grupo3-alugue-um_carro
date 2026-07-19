@@ -12,12 +12,12 @@ let prefixoRaiz = "./";
 
 // Se o caminho contiver alguma subpasta, usamos "../" para voltar para a raiz
 if (caminhoAtual.includes('/catalogo/') ||
-    caminhoAtual.includes('/Contato/') ||
+    caminhoAtual.includes('/contato/') ||
     caminhoAtual.includes('/inicio/') ||
     caminhoAtual.includes('/pagina_alugar_carro/') ||
     caminhoAtual.includes('/pagina_individual_carro/') ||
     caminhoAtual.includes('/reservas/') ||
-    caminhoAtual.includes('/Sobre/')) {
+    caminhoAtual.includes('/sobre/')) {
     prefixoRaiz = "../";
 }
 
@@ -26,8 +26,8 @@ const headerCorrigido = htmlHeader
     .replace('href="/inicio/inicio.html"', `href="${prefixoRaiz}inicio/inicio.html"`)
     .replace('href="/catalogo/catalogo.html"', `href="${prefixoRaiz}catalogo/catalogo.html"`)
     .replace('href="/reservas/reservas.html"', `href="${prefixoRaiz}reservas/reservas.html"`)
-    .replace('href="/Sobre/Sobre.html"', `href="${prefixoRaiz}Sobre/Sobre.html"`)
-    .replace('href="/Contato/Contato.html"', `href="${prefixoRaiz}Contato/Contato.html"`)
+    .replace('href="/sobre/sobre.html"', `href="${prefixoRaiz}Sobre/Sobre.html"`)
+    .replace('href="/contato/contato.html"', `href="${prefixoRaiz}Contato/Contato.html"`)
     // Aproveita e corrige também o botão "Explorar" para ir direto para o catálogo
     .replace('href="" id="btn_explorar"', `href="${prefixoRaiz}catalogo/catalogo.html" id="btn_explorar"`);
 
