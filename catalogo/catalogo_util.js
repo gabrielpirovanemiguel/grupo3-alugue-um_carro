@@ -55,7 +55,7 @@ export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVol
     btnVoltar.classList.remove('desativado');
     btnAvancar.classList.remove('desativado');
     if (totalPaginas === 1) {
-        container.innerHTML = `<button class="btn_numero desativado">1</button>`;
+        container.innerHTML = `<button class="botao_numero desativado">1</button>`;
         btnVoltar.classList.add('desativado');
         btnAvancar.classList.add('desativado');
         return;
@@ -71,9 +71,9 @@ export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVol
             } else if (i - 1 < 0) {
                 btnVoltar.classList.add('desativado');
             }
-            container.insertAdjacentHTML('beforeend', `<button class="btn_numero ativado">${i + 1}</button>`);
+            container.insertAdjacentHTML('beforeend', `<button class="botao_numero ativado">${i + 1}</button>`);
         } else {
-            container.insertAdjacentHTML('beforeend', `<button class="btn_numero">${i + 1}</button>`);
+            container.insertAdjacentHTML('beforeend', `<button class="botao_numero">${i + 1}</button>`);
         }
 
     }
