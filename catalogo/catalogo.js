@@ -100,9 +100,6 @@ async function injetar(pagina, query=null, nomePesquisa=null) {
     adicionarBotoesPaginacao(response.totalPaginas, btnPaginas, pagina, btnSetas[0], btnSetas[1]);
 }
 
-
-
-
 function desfocarBotoes(botoes) {
     botoes.forEach(botao => {
         botao.classList.remove('ativo');

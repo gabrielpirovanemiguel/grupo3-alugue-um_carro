@@ -24,9 +24,9 @@ const inputTelefone = document.getElementById('telefone');
 const inputLocalDevolucao = document.getElementById('local_devolucao');
 const dataRetirada = document.getElementById('data_retirada');
 const dataDevolucao = document.getElementById('data_devolucao');
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
 
-
-let id = 9;
 const calcularValor = function(dias, valorDiario) { 
     const valorTotal = dias * valorDiario; 
     return valorTotal; 

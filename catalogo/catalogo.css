@@ -267,6 +267,9 @@ main {
     height: 33px;
     border: 1px solid #2563EB26;
     border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

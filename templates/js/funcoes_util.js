@@ -41,11 +41,11 @@ export function fazerCard(carro) {
                         <span>R$${carro.valor_aluguel_dia}</span>
                     </span>
                     <span class="alugar_card">
-                        ${carro.status_disponibilidade === 'disponivel' ? ' <a href="" class="btn_alugar">Alugar</a>' :
+                        ${carro.status_disponibilidade === 'disponivel' ? ` <a  href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}"class="btn_alugar">Alugar</a>` :
             '<a href="" class="btn_alugar indisponivel">Indisponível</a>'
 
         }
-                        <button class="icone_alugar">
+                        <a href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}" class="icone_alugar">
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 1.25V3.75" stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
@@ -59,7 +59,7 @@ export function fazerCard(carro) {
                                 <path d="M1.875 6.25H13.125" stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                        </button>
+                        </a>
                     </span>
 
                 </div>
