@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+    <title>Alugar Carro</title>
     <script src="../templates/layout_padrao/aplicar_fontes.js"></script>
     <script src="../templates/layout_padrao/aplicar_css_padrao.js"></script>
     <link rel="stylesheet" href="./alugar_carro.css ">
@@ -14,10 +14,84 @@
     <header id="header" class="header">
     </header>
     <main>
-        <div>lor</div>
+        <div class="titulo">
+            <p>RESERVA</p>
+            <h1>RESERVAR VEÍCULO</h1>
+        </div>
+        <section class="formulario_imagem">
+            <form action="" class="formulario" method="post">
+                <div class="container_formulario">
+                    <h2>Dados Pessoais</h2>
+                    <div class="linha_formulario">
+                        <div>
+                            <label for="nome">NOME COMPLETO</label>
+                            <input type="text" name="nome" id="nome" placeholder="Ex: João da Silva" required>
+                        </div>
+                        <div>
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
+                        </div>
+                    </div>
+                    <div class="linha_formulario">
+                        <div>
+                            <label for="email">E-MAIL</label>
+                            <input type="email" name="email" id="email" placeholder="Ex: exemplo@exemplo.com" required>
+                        </div>
+                        <div>
+                            <label for="telefone">TELEFONE</label>
+                            <input type="text" name="telefone" id="telefone" placeholder="(ddd) xxxxx-xxxx" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_formulario">
+                    <h2>Dados da Reserva</h2>
+                    <div class="linha_formulario">
+                        <div>
+                            <label for="veiculo">VEÍCULO</label>
+                            <input type="text" name="veiculo" id="veiculo" value="" disabled>
+                        </div>
+                        <div>
+                            <label for="local_devolucao">LOCAL DE DEVOLUÇÃO</label>
+                            <input type="text" name="local_devolucao" placeholder="Ex: Av. Ary Parreiras, 206, Icaraí" id="local_devolucao">
+                        </div>
+                    </div>
+                    <div class="linha_formulario inputs_data">
+                        <div>
+                            <label for="data_retirada">DATA DE RETIRADA</label>
+                            <input type="date" name="data_retirada" id="data_retirada" required>
+                        </div>
+                        <div>
+                            <label for="data_devolucao">DATA DE DEVOLUÇÃO</label>
+                            <input type="date" name="data_devolucao" id="data_devolucao" required>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="CONFIRMAR RESERVAR" id="botao_reservar">
+            </form>
+            <div class="container_formulario imagem">
+                <h3>RESUMO</h3>
+                <figure>
+                    <img src="./teste.png" alt="" id="imagem_carro">
+                    <p class="legenda"></p>
+                </figure>
+                <span class="linha_resumo">
+                    <p class="titulo_resumo">Diária</p>
+                    <p class="valor_resumo" id="valor_diario"></p>
+                </span>
+                <span class="linha_resumo">
+                    <p class="titulo_resumo">Dias</p>
+                    <p class="valor_resumo" id="quantidade_dias"></p>
+                </span> 
+                <span class="linha_resumo total" id="span_total">
+                    <p>Total</p>
+                    <p id="valor_total"></p>
+                </span>
+            </div>
+        </section>
     </main>
-
     <footer id="footer" class="footer"></footer>
     <script type="module" src="../templates/layout_padrao/aplicar_layout_padrao.js"></script>
+    <script type="module" src="./alugar_carro.js"></script>
 </body>
+
 </html>

@@ -22,9 +22,9 @@ export const htmlHeader = `
             </span>
         </span>
         <nav id="nav_bar">
-            <a href="">Início</a>
-            <a href="">Catálogo</a>
-            <a href="">Reservas</a>
+            <a href="/inicio/inicio.html">Início</a>
+            <a href="/catalogo/catalogo.html">Catálogo</a>
+            <a href="/reservas/reservas.html">Reservas</a>
             <a href="/Sobre/Sobre.html">Sobre</a>
             <a href="/Contato/Contato.html">Contato</a>
         </nav>
@@ -83,8 +83,8 @@ export const htmlFooter = `
             <div class="col_2_footer_superior ancoras">
                 <h4 class="titulos_footer">PLATAFORMA</h4>
                 <nav class="nav_bar_footer">
-                    <a href="">Catálogo</a>
-                    <a href="">Minhas reservas</a>
+                    <a href="/catalogo/catalogo.html">Catálogo</a>
+                    <a href="/reserva/reserva.html">Minhas reservas</a>
                     <a href="">Como funciona</a>
                     <a href="">Preços</a>
                 </nav>

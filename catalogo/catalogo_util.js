@@ -1,0 +1,94 @@
+export function fazerCard(carro) {
+    const htmlCard = `
+            <div class="card">
+                <figure class="imagem_card">
+                    <img src="${carro.url_imagem}" alt="">
+                    <span class="tag">
+                        <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.94755 0.485585C3.96398 0.452383 3.98937 0.424435 4.02084 0.404895C4.05232 0.385354 4.08863 0.375 4.12567 0.375C4.16272 0.375 4.19903 0.385354 4.23051 0.404895C4.26198 0.424435 4.28737 0.452383 4.3038 0.485585L5.17005 2.24021C5.22712 2.3557 5.31135 2.45561 5.41553 2.53138C5.51971 2.60715 5.64072 2.6565 5.76817 2.67521L7.70543 2.95871C7.74213 2.96403 7.77662 2.97951 7.80498 3.00341C7.83335 3.02731 7.85446 3.05867 7.86593 3.09394C7.8774 3.12921 7.87878 3.16699 7.86989 3.203C7.86101 3.23901 7.84223 3.27182 7.81568 3.29771L6.41468 4.66196C6.32228 4.752 6.25315 4.86314 6.21324 4.98582C6.17332 5.1085 6.16382 5.23904 6.18555 5.36621L6.5163 7.29371C6.52278 7.3304 6.51882 7.36817 6.50486 7.40272C6.49091 7.43726 6.46752 7.46719 6.43738 7.48908C6.40723 7.51098 6.37154 7.52396 6.33437 7.52655C6.29721 7.52913 6.26006 7.52122 6.22717 7.50371L4.49542 6.59321C4.38132 6.5333 4.25437 6.50199 4.12549 6.50199C3.99661 6.50199 3.86966 6.5333 3.75555 6.59321L2.02417 7.50371C1.9913 7.52111 1.9542 7.52894 1.91709 7.52631C1.87999 7.52367 1.84437 7.51067 1.81429 7.48879C1.7842 7.46691 1.76086 7.43703 1.74692 7.40254C1.73298 7.36806 1.729 7.33035 1.73542 7.29371L2.0658 5.36659C2.08762 5.23936 2.07817 5.10873 2.03825 4.98598C1.99833 4.86322 1.92915 4.75202 1.83667 4.66196L0.435675 3.29809C0.408898 3.27222 0.389922 3.23936 0.380911 3.20324C0.371899 3.16712 0.373214 3.12919 0.384704 3.09378C0.396195 3.05837 0.4174 3.0269 0.445904 3.00295C0.474407 2.97901 0.509064 2.96355 0.545925 2.95834L2.4828 2.67521C2.6104 2.65665 2.73157 2.60736 2.83589 2.53158C2.94022 2.4558 3.02456 2.35581 3.08167 2.24021L3.94755 0.485585Z"
+                                fill="#FFB900" stroke="#FFB900" stroke-width="0.75" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        #1 da semana
+                    </span>
+                </figure>
+                <div class="texto_card">
+                    <span class="titulo_card">
+                        <h3>${carro.nome}</h3>
+                        <p>${carro.universo_origem}</p>
+                    </span>
+                    <span class="valor_card">
+                        <span>por dia</span>
+                        <span>R$${carro.valor_aluguel_dia}</span>
+                    </span>
+                    <span class="alugar_card">
+                        ${carro.status_disponibilidade === 'disponivel' ? ` <a  href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}"class="btn_alugar">Alugar</a>` :
+            '<a href="" class="btn_alugar indisponivel">Indisponível</a>'
+
+        }
+                        <a href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}" class="icone_alugar">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 1.25V3.75" stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 1.25V3.75" stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M11.875 2.5H3.125C2.43464 2.5 1.875 3.05964 1.875 3.75V12.5C1.875 13.1904 2.43464 13.75 3.125 13.75H11.875C12.5654 13.75 13.125 13.1904 13.125 12.5V3.75C13.125 3.05964 12.5654 2.5 11.875 2.5Z"
+                                    stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M1.875 6.25H13.125" stroke="#64748B" stroke-width="1.25" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+        `
+    return htmlCard;
+};
+
+export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVoltar, btnAvancar) {
+    container.innerHTML = '';
+    btnVoltar.classList.remove('desativado');
+    btnAvancar.classList.remove('desativado');
+    if (totalPaginas === 1) {
+        container.innerHTML = `<button class="botao_numero desativado">1</button>`;
+        btnVoltar.classList.add('desativado');
+        btnAvancar.classList.add('desativado');
+        return;
+    } else if(totalPaginas === 0) {
+        btnVoltar.style.display = 'none';
+        btnAvancar.style.display = 'nome';
+        return;
+    }
+    for (let i = 0; i < totalPaginas; i++) {
+        if (i + 1 == pagina) {
+            if (i + 2 > totalPaginas) {
+                btnAvancar.classList.add('desativado');
+            } else if (i - 1 < 0) {
+                btnVoltar.classList.add('desativado');
+            }
+            container.insertAdjacentHTML('beforeend', `<button class="botao_numero ativado">${i + 1}</button>`);
+        } else {
+            container.insertAdjacentHTML('beforeend', `<button class="botao_numero">${i + 1}</button>`);
+        }
+
+    }
+}
+
+export async function pesquisarPagina(pagina, acao) {
+    const url = `http://127.0.0.1:5500/catalogo/catalogo.html?pagina=${pagina}`;
+    const response = await fetch(url);
+    return response.json();
+}
+
+export function desfocarBotoes(botoes) {
+    botoes.forEach(botao => {
+        botao.classList.remove('ativo');
+    })
+}
+
+
