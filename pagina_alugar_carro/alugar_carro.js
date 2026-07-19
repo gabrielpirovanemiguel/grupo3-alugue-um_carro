@@ -5,6 +5,7 @@ import {
     atualizarLocatorio
 } from '/templates/js/funcoes_api.js';
 
+let valorDiario;
 const inputNomeVeiculo = document.getElementById('veiculo');
 const legendaImagemVeiculo = document.querySelector('.legenda');
 const imagemVeiculo = document.getElementById('imagem_carro');
@@ -63,19 +64,19 @@ dataRetirada.addEventListener('change', function () {
     if (!dataDevolucao.value) return;
     const dias = calcularDiasEntreDatas(dataRetirada.value, dataDevolucao.value);
     atualizarContainerValorTotal(dias);
-})
+});
 
 dataDevolucao.addEventListener('change', function () {
     if (!dataRetirada.value) return;
     const dias = calcularDiasEntreDatas(dataRetirada.value, dataDevolucao.value);
     atualizarContainerValorTotal(dias);
 
-})
+});
 
 function atualizarContainerValorTotal(dias) {
     spanQuantidadeDias.textContent = dias;
-    const valor = calcularValor(dias, valorDiario);
-    spanValorTotal.textContent = valor;
+    const valor = calcularValorReserva(dias, valorDiario);
+    spanValorTotal.textContent = `R$${valor.toLocaleString('pt-br')}`;
     valor > 0 ? containerValorTotal.classList.remove('desativado') : containerValorTotal.classList.add('desativado');
 }
 
@@ -83,13 +84,14 @@ function carregarDadosInicio(dados) {
     inputNomeVeiculo.value = dados.nome;
     legendaImagemVeiculo.textContent = dados.nome;
     imagemVeiculo.src = dados.url_imagem;
+    imagemVeiculo.alt = `Foto do ${dados.nome}`;
     valorDiario = dados.valor_aluguel_dia;
-    spanValorDiario.textContent = `R$${valorDiario}`;
+    spanValorDiario.textContent = `R$${valorDiario.toLocaleString('pt-BR')}`;
     spanQuantidadeDias.textContent = '0';
     spanValorTotal.textContent = `R$0`;
-    containerValorTotal.classList.add('desativado');
+    containerValorTotal.classList.add('container_desativado');
 }
 
-function calcularValor(dias, valorDiario) {
+function calcularValorReserva(dias, valorDiario) {
     return dias * valorDiario;
 }
