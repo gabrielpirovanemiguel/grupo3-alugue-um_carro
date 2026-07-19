@@ -1,46 +1,37 @@
 async function carregarDadosIntroducao() {
     try {
-        const resposta = await fetch('http://localhost:3001/carros');
-        const veiculos = await resposta.json();
+        // Aponta para a porta do seu json-server e busca o nó "carros"
+        const resposta = await fetch('http://localhost:3000/carros');
+        const carros = await resposta.json();
 
-        const introducaoContainer = document.getElementById('introducao_imagens_container');
-    
-        if (introducaoContainer) {
-            introducaoContainer.innerHTML = ''; 
-        
-            const todosIds = veiculos.map(carro => carro.id); // Mapeia os ids
+        // Seleciona o container do banner
+        const introducaoContainer = document.querySelector('.introducao_imagens');
+        introducaoContainer.innerHTML = ''; // Limpa o container antigo
 
-            const idsrandomizados = todosIds.sort(() => Math.random() - 0.5); // Randomiza os ids (com o - 0.5)
+        // Pega os 4 primeiros carros para o mosaico (ex: McQueen, Mate, Doc, Sally)
+        const veiculosBanner = carros.slice(0, 4);
 
-            const idsSorteados = idsrandomizados.slice(0, 4); //Pega apenas os primeiros 4 ids sorteados
+        veiculosBanner.forEach(carro => {
+            const estaDisponivel = carro.status_disponibilidade === 'disponivel';
+            const tagStatus = estaDisponivel
+                ? `<span class="tag_disponivel">● Disponível</span>`
+                : `<span class="tag_indisponivel">● Ocupado</span>`;
 
-            const veiculosBanner = veiculos.filter(carro => idsSorteados.includes(carro.id)); //Pega somente os ids sorteados
-
-            veiculosBanner.forEach(carro => {
-                const estaDisponivel = carro.status_disponibilidade === 'disponivel';  // Verifica a disponibilidade
-                
-                const tagStatus = estaDisponivel 
-                    ? `<span class="tag_disponivel">● Disponível</span>` 
-                    : `<span class="tag_indisponivel">● Indisponível</span>`;
-                
-                const bannerCard = `
-                    <div class="card_imagem_banner">
-                        <img src="${carro.url_imagem}" alt="${carro.nome}">
-                        <div class="card_info">
-                            <h4>${carro.nome}</h4>
-                            ${tagStatus} 
-                        </div>
+            const bannerCard = `
+                <a href="../pagina_individual_carro/PaginaIndividual.html?id=${carro.id}" class="card_imagem_banner">
+                    <img src="${carro.url_imagem}" alt="${carro.nome}">
+                    <div class="card_info">
+                        <h4>${carro.nome}</h4>
+                        ${tagStatus}
                     </div>
-                `; // Mostra no site
-                introducaoContainer.innerHTML += bannerCard;
-            });
-        }
-
-        
+                </a>
+            `;
+            introducaoContainer.innerHTML += bannerCard;
+        });
 
     } catch (erro) {
-        console.error("Erro ao carregar os veículos:", erro);
-    } // Caso de erro
+        console.error("Erro ao carregar os carros do banco de dados:", erro);
+    }
 }
 
 carregarDadosIntroducao();
@@ -48,7 +39,7 @@ carregarDadosIntroducao();
 
 async function carregarDadosDestaques() {
     try{
-        const resposta = await fetch('http://localhost:3001/carros');
+        const resposta = await fetch('http://localhost:3000/carros');
         const veiculos = await resposta.json();
 
         const destaques_container = document.getElementById("card_destaques_container");
@@ -134,7 +125,7 @@ carregarDadosDestaques();
 
 async function carregarDadosProcurados(){
     try {
-        const resposta = await fetch('http://localhost:3001/carros');
+        const resposta = await fetch('http://localhost:3000/carros');
         const veiculos = await resposta.json();
 
         const procuradosContainer = document.getElementById('container_cards_procurados');
