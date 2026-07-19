@@ -1,9 +1,9 @@
-import { calcularDiasEntreDatas } from '/templates/js/funcoes_util.js';
+import { calcularDiasEntreDatas } from '/templates/js/util.js';
 
 import {
     obterCarroPorId,
     atualizarLocatario
-} from '/templates/js/funcoes_api.js';
+} from '/templates/js/api.js';
 
 let valorDiario;
 const inputNomeVeiculo = document.getElementById('veiculo');
