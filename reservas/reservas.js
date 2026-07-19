@@ -1,5 +1,5 @@
-import { obterCarrosAlugados, cancelarReserva } from '/templates/js/api.js';
-import { calcularDiasEntreDatas } from '/templates/js/util.js';
+import { obterCarrosAlugados, cancelarReserva } from '../templates/js/api.js';
+import { calcularDiasEntreDatas } from '../templates/js/util.js';
 
 const containerReservas = document.querySelector('.lista_reservas_container');
 const botaoCancelar = document.querySelector('.botao_acao botao_cancelar');

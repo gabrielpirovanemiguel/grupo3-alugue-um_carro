@@ -53,7 +53,7 @@ containerFiltro.addEventListener('click', async function (evento) {
             query = null;
             break
         default:
-            query = `categoria=${botaoAtual.value}`;
+            query = `categoria=${botaoAtual}`;
     }
     ativarFiltro(query, evento.target);
 });
