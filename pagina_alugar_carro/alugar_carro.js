@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 formulario.addEventListener('submit', async function (evento) {
     evento.preventDefault();
     const locatario = {
-        nome_locatorio: inputNome.value,
-        cpf_locatorio: inputCpf.value,
-        emai_locatorio: inputEmail.value,
-        telefone_locatorio: inputTelefone.value,
-        local_retirada: inputLocalDevolucao.value,
-        data_retirada: dataRetirada.value,
-        data_devolucao: dataDevolucao.value
+        nome: inputNome.value,
+        documento: inputCpf.value,
+        telefone: inputTelefone.value,
+        email: inputEmail,
+        local_devolucao: inputLocalDevolucao,
+        data_inicio_aluguel: dataRetirada.value,
+        data_devolucao_prevista: dataDevolucao.value
     }
     const dadosAtualizados = {
         locatario: locatario,
