@@ -12,10 +12,6 @@ export function calcularDiasEntreDatas(data1, data2) {
     return dias;
 };
 
-export function atualizarSpanResumo(valor, span) {
-    valor > 0 ? span.classList.remove('desativado') : span.classList.add('desativado');
-}
-
 export function fazerCard(carro) {
     const htmlCard = `
             <div class="card">
