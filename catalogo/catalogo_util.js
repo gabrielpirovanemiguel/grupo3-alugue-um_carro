@@ -1,14 +1,3 @@
-export function calcularDiasEntreDatas(data1, data2) {
-    const d1 = new Date(data1);
-    const d2 = new Date(data2);
-
-    if (isNaN(d1) || isNaN(d2)) throw new Error('Data inválida fornecida');
-
-    const diasMs = Math.abs(d2 - d1);
-    const dias = diasMs / (1000 * 60 * 60 * 24);
-    return dias;
-};
-
 export function fazerCard(carro) {
     const htmlCard = `
             <div class="card">
@@ -59,7 +48,7 @@ export function fazerCard(carro) {
             </div>
         `
     return htmlCard;
-}
+};
 
 export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVoltar, btnAvancar) {
     container.innerHTML = '';

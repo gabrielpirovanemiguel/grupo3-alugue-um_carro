@@ -1,0 +1,47 @@
+.paginas {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    gap: 16px;
+    margin-bottom: 96px;
+    flex: 1;
+}
+
+.botao_paginas {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.botao_numero,
+.botao_voltar,
+.botao_avancar {
+    text-decoration: none;
+    background-color: var(--cor_3);
+    color: var(--cor_7);
+    padding: 8px 0;
+    width: 36px;
+    height: 36px;
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.ativado {
+    background-color: var(--cor_2);
+    border: 1px solid #2563EB26;
+}
+
+.desativado {
+    opacity: 0.7;
+    pointer-events: none;
+    cursor: not-allowed;
+}
