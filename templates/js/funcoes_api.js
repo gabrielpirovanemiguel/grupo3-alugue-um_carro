@@ -90,7 +90,7 @@ export async function obterCarrosAlugados() {
         if (!response.ok) throw new Error(`Ocorreu um erro: ${response.status}`);
         const carros = await response.json();
         carros.sort((carro1, carro2) =>
-            new Date(carro1.locatario.data_inicio_aluguel) - new Date(carro2.locatario.data_devolucao_prevista)
+            new Date(carro1.locatario.data_devolucao_prevista) - new Date(carro1.locatario.data_inicio_aluguel)
         );
 
         return carros;
