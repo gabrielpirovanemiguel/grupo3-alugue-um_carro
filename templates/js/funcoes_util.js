@@ -4,7 +4,6 @@ export function calcularDiasEntreDatas(data1, data2) {
 
     if (isNaN(d1) || isNaN(d2)) {
         throw new Error('Data inválida fornecida');
-        alert('Data inválida fornecida');
     }
 
     const diasMs = Math.abs(d2 - d1);
