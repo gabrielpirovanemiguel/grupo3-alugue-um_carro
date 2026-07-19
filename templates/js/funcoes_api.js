@@ -38,7 +38,7 @@ export async function obterCarrosPaginado(pagina = 1, query = null) {
     }
 }
 
-export async function atualizarLocatorio(locatorio, id) {
+export async function atualizarLocatario(locatario, id) {
     try {
         const response = await fetch(
             `${urlBase}/${id}`, {
@@ -46,7 +46,7 @@ export async function atualizarLocatorio(locatorio, id) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(locatorio)
+            body: JSON.stringify(locatario)
         });
         if (!response.ok) throw new Error("Ocorreu um erro: ", response.status);
 

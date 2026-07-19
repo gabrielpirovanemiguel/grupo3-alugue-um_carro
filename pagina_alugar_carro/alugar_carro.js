@@ -2,7 +2,7 @@ import { calcularDiasEntreDatas } from '/templates/js/funcoes_util.js';
 
 import {
     obterCarroPorId,
-    atualizarLocatorio
+    atualizarLocatario
 } from '/templates/js/funcoes_api.js';
 
 let valorDiario;
@@ -51,8 +51,9 @@ formulario.addEventListener('submit', async function (evento) {
         status_disponibilidade: 'alugado'
     }
     try {
-        await atualizarLocatorio(dadosAtualizados, id);
+        await atualizarLocatario(dadosAtualizados, id);
         alert("Aluguel confirmado com sucesso!");
+        window.location.href = '/catalogo/catalogo.html';
     } catch (erro) {
         alert("Não foi possível concluir o aluguel. Tente novamente.");
         console.error(erro);
