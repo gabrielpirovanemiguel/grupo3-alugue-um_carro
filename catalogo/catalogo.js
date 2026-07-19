@@ -1,13 +1,14 @@
-import { obterCarrosPaginado, pesquisarNome } from '/templates/js/api.js';
+import { obterCarrosPaginado, pesquisarNome } from '../templates/js/api.js';
 import {
     fazerCard,
     adicionarBotoesPaginacao,
-    pesquisarPagina
+    pesquisarPagina,
+    desfocarBotoes
 } from './catalogo_util.js'
 
 const sessaoCards = document.querySelector('.sessao_cards');
 const containerSetas = document.querySelector('.paginas');
-const containerNumeros = document.querySelector('.botao_paginas');
+const containerBotaoPaginas = document.querySelector('.botao_paginas');
 const botoesSeta = document.querySelectorAll('.seta');
 const botoesNumero = document.querySelectorAll('.botao_numero');
 const containerFiltro = document.querySelector('.filtro');
@@ -19,74 +20,59 @@ var query;
 
 document.addEventListener('DOMContentLoaded', async function () {
     paginaAtual = 1;
-    const response = await obterCarrosPaginado(1);
-    response.dados.forEach(carro => {
-        const card = fazerCard(carro);
-        sessaoCards.insertAdjacentHTML('beforeend', card);
-    });
-    adicionarBotoesPaginacao(response.totalPaginas, containerNumeros, 1, botoesSeta[0], botoesSeta[1]);
+    atualizarCatalogo(paginaAtual);
 });
 
-containerNumeros.addEventListener('click', async function (event) {
-    if (!event.target.classList.contains('botao_numero')) return;
-    event.preventDefault();
-    paginaAtual = parseInt(event.target.textContent);
-    await injetar(paginaAtual, query, termoPesquisa);
+containerBotaoPaginas.addEventListener('click', async function (evento) {
+    if (!evento.target.classList.contains('botao_numero')) return;
+    evento.preventDefault();
+    paginaAtual = parseInt(evento.target.textContent);
+    await atualizarCatalogo(paginaAtual, query, termoPesquisa);
 });
 
-inputFiltro.addEventListener('input', async function (event) {
-    const valor = event.target.value.trim();
+inputFiltro.addEventListener('input', async function (evento) {
+    const valor = evento.target.value.trim();
     valor === '' ? termoPesquisa = null : termoPesquisa = valor;
-    await injetar(paginaAtual, query, termoPesquisa);
+    await atualizarCatalogo(paginaAtual, query, termoPesquisa);
 })
 
-containerFiltro.addEventListener('click', async function (event) {
-    if (event.target.classList.contains('categoria')) {
-        paginaAtual = 1;
-        desfocarBotoes(botoesFiltro);
-        query = `categoria=${event.target.value}`;
-        await injetar(paginaAtual, query, termoPesquisa);
-        event.target.classList.add('ativo');
-        return;
-    } else if (event.target.classList.contains('botao_filtro')) {
-        paginaAtual = 1;
-        if (event.target.value === 'indisponivel') {
-            desfocarBotoes(botoesFiltro);
-            query = 'status_disponibilidade=alugado&status_disponibilidade=manuntencao';
-            await injetar(paginaAtual, query, termoPesquisa);
-            event.target.classList.add('ativo');
-        } else if (event.target.value === 'disponivel') {
-            desfocarBotoes(botoesFiltro);
+containerFiltro.addEventListener('click', async function (evento) {
+    if (!evento.target.classList.contains('botao_filtro')) return;
+    const botaoAtual = evento.target.value;
+    paginaAtual = 1;
+    desfocarBotoes(botoesFiltro);
+
+    switch (botaoAtual) {
+        case "disponivel":
             query = 'status_disponibilidade=disponivel';
-            await injetar(paginaAtual, query, termoPesquisa);
-            event.target.classList.add('ativo')
-
-        } else {
-            desfocarBotoes(botoesFiltro);
-            event.target.classList.add('ativo');
-            injetar(paginaAtual, query, termoPesquisa);
-        }
-        return;
-
-    } return;
-
+            break
+        case "indisponivel":
+            query = 'status_disponibilidade=alugado';
+            break
+        case "todos":
+            query = null;
+            break
+        default:
+            query = `categoria=${botaoAtual.value}`;
+    }
+    ativarFiltro(query, evento.target);
 });
 
-containerSetas.addEventListener('click', async function (event) {
-    if (event.target.classList.contains('desativado')) return;
-    if (event.target.classList.contains('botao_voltar')) {
+containerSetas.addEventListener('click', async function (evento) {
+    if (evento.target.classList.contains('desativado')) return;
+    if (evento.target.classList.contains('botao_voltar')) {
         paginaAtual--;
-        await injetar(paginaAtual, query, termoPesquisa);
-    } else if (event.target.classList.contains('botao_avancar')) {
+        await atualizarCatalogo(paginaAtual, query, termoPesquisa);
+    } else if (evento.target.classList.contains('botao_avancar')) {
         paginaAtual++;
-        await injetar(paginaAtual, query, termoPesquisa);
+        await atualizarCatalogo(paginaAtual, query, termoPesquisa);
     } else return;
 })
 
-async function injetar(pagina, query = null, termoPesquisa = null) {
+async function atualizarCatalogo(pagina, query = null, termoPesquisa = null) {
     let response;
     if (termoPesquisa) {
-        response = await pesquisarNome(pagina, termoPesquisa, query)
+        response = await pesquisarNome(pagina, termoPesquisa, query);
     } else {
         response = await obterCarrosPaginado(pagina, query);
     }
@@ -95,12 +81,12 @@ async function injetar(pagina, query = null, termoPesquisa = null) {
         const card = fazerCard(carro);
         sessaoCards.insertAdjacentHTML('beforeend', card);
     });
-    adicionarBotoesPaginacao(response.totalPaginas, containerNumeros, pagina, botoesSeta[0], botoesSeta[1]);
+    adicionarBotoesPaginacao(response.totalPaginas, containerBotaoPaginas, pagina, botoesSeta[0], botoesSeta[1]);
 }
 
-function desfocarBotoes(botoes) {
-    botoes.forEach(botao => {
-        botao.classList.remove('ativo');
-    })
+async function ativarFiltro(query, botao) {
+    await atualizarCatalogo(paginaAtual, query, termoPesquisa);
+    botao.classList.add('ativo');
 }
+
 

@@ -84,3 +84,11 @@ export async function pesquisarPagina(pagina, acao) {
     const response = await fetch(url);
     return response.json();
 }
+
+export function desfocarBotoes(botoes) {
+    botoes.forEach(botao => {
+        botao.classList.remove('ativo');
+    })
+}
+
+
