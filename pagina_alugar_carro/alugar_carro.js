@@ -29,7 +29,7 @@ const id = chavesQuery.get('id');
 document.addEventListener('DOMContentLoaded', async () => {
     const dados = await obterCarroPorId(id);
     if (dados.status_disponibilidade === 'alugado') {
-        //TODO
+        window.location.href = '/catalogo/catalogo.html';
     }
     carregarDadosInicio(dados);
 });
