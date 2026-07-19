@@ -53,11 +53,17 @@ async function carregarDadosDestaques() {
 
         const destaques_container = document.getElementById("card_destaques_container");
 
-        const veiculosDestaque = veiculos.slice(0,4);
+        const veiculosDestaque = veiculos.slice(3,7);
 
         let cardDestaques = '';
 
         veiculosDestaque.forEach((carro,index) => {
+            
+            const precoFormatado = Number(carro.valor_aluguel_dia).toLocaleString       ('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            
             let iconeCategoria = 'ph-video-camera'; 
             let nomeCategoria = 'Filme';
             let classeCorCategoria = 'tag_filme';
@@ -87,6 +93,9 @@ async function carregarDadosDestaques() {
             <div class="card_veiculos">
                 <div class="card_imagem_destaques"> 
                     <img src="${carro.url_imagem}" alt="${carro.nome}">
+                    <div class="tag_destaques">
+                        <i class="ph-fill ph-star"></i> #${index + 1} da semana
+                    </div>
                     <div class = "card_destaques_topo">
                         <span class="tag_categoria ${classeCorCategoria}"><i class="ph ${iconeCategoria}"></i> ${nomeCategoria}</span> 
                         ${tagStatus}
@@ -100,12 +109,12 @@ async function carregarDadosDestaques() {
                     </div>
                     <div class="preco_veiculo">
                         <span>por dia</span>
-                        <h4>R$ ${carro.valor_aluguel_dia}</h4>
+                        <h4>${precoFormatado}</h4>
                     </div>
 
-                    <div>
+                    <div class="botoes_destaques">
                         ${botaoAcao}
-                        <button><i class="ph-ph-calendar-blank"></i></button>
+                        <button class="botao_calendario"><i class="ph ph-calendar-blank"></i></button>
                     </div>
                 
                 </div>
@@ -122,3 +131,76 @@ async function carregarDadosDestaques() {
 }
 
 carregarDadosDestaques();
+
+async function carregarDadosProcurados(){
+    try {
+        const resposta = await fetch('http://localhost:3001/carros');
+        const veiculos = await resposta.json();
+
+        const procuradosContainer = document.getElementById('container_cards_procurados');
+
+        const veiculosProcurados  = veiculos.slice(3,8);
+
+        let cardProcurados  = '';
+
+        veiculosProcurados.forEach((carro,index) =>{
+            const precoFormatado = Number(carro.valor_aluguel_dia).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            const numeroFormatado = String(index +1).padStart(2,'0')
+            
+            let iconeCategoria = 'ph-video-camera'; 
+            let nomeCategoria = 'Filme';
+            let classeCorCategoria = 'tag_filme';
+
+            if (carro.categoria === 'desenho') {
+            iconeCategoria = 'ph-star'; 
+                nomeCategoria = 'Desenho';
+                classeCorCategoria = 'tag_desenho'; 
+            } else if (carro.categoria === 'série') {
+                iconeCategoria = 'ph-television'; 
+                nomeCategoria = 'Série';
+                classeCorCategoria = 'tag_serie'; 
+            }
+
+            const estaDisponivel = carro.status_disponibilidade === 'disponivel';
+            const tagStatus = estaDisponivel 
+                ? `<span class="tag_disponivel">● Disponível</span>` 
+                : `<span class="tag_indisponivel">● Indisponível</span>`;
+            
+            cardProcurados += `
+                <div class="card_procurados">
+                    <span class="numero_ranking_procurados">${numeroFormatado}</span>
+                    <div class="info_procurados">
+                        <img src="${carro.url_imagem}" alt="${carro.nome}">
+                        <div class="info_procurados_texto">
+                            <h4>${carro.nome}</h4>
+                            <p>${carro.universo_origem}</p>
+                        </div>
+                    </div>
+                    <div class="informacoes_direita_procurados">
+                        <span class="tag_categoria ${classeCorCategoria}">
+                            <i class="ph ${iconeCategoria}"></i> ${nomeCategoria}
+                        </span>
+                        ${tagStatus}
+                        <span class="preco_procurados">${precoFormatado}/dia</span>
+                        
+                        <a href="#" class="seta_procurados">
+                            <i class="ph ph-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `  
+        });
+        procuradosContainer.innerHTML=cardProcurados
+
+
+    } catch (error){
+        console.error("Erro ao carregar os veículos:", error);
+
+    }
+}
+
+carregarDadosProcurados();
+

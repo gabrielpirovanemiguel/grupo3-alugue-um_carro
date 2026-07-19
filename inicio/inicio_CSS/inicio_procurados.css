@@ -1,0 +1,152 @@
+.mais_procurados{
+    width: 100%;
+    height: 800px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 80px;
+    background: #0D1322;
+
+
+}
+
+.header_procurados{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+
+}
+
+.header_procurados span{
+    color: #FFB900;
+    font-size: 12px;
+    font-family: cousine;
+
+}
+
+.header_procurados h2{
+    font-size: 48px;
+    color: #FFFFFF;
+    font-family: barlow condensed;
+    font-weight: 900;
+}
+
+.header_procurados p{
+    color: #2563EB;
+
+}
+
+.container_procurados{
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+    display: flex;
+    gap: 12px;
+
+}
+
+.container_cards_procurados{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card_procurados{
+    width: 1064px;
+    height: 82px;
+    border-radius: 16px;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: start;
+    
+    padding: 16px;
+    background: #080C14;
+    border-top: 1px solid #2563EB26
+
+
+}
+
+.numero_ranking_procurados{
+    width: 60px;
+    height: 48px;
+    font-size: 50px;
+    color: #2563EB33;
+    font-weight: 900;
+
+
+}
+
+.info_procurados{
+    height: 48px;
+    display: flex;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+}
+
+.info_procurados img{
+    width: 64px;
+    height: 48px;
+    margin-left: 15px;
+    border-radius: 16px;
+
+}
+
+.info_procurados_texto{
+    width: 475.140625px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 3px;
+
+}
+
+.info_procurados_texto h4{
+    color: #F1F5F9;
+    font-size: 16px;
+
+}
+
+.info_procurados p{
+    color: #64748B;
+    font-size: 12px;
+
+}
+
+.informacoes_direita_procurados{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+}
+
+.preco_procurados{
+    font-size: 14px;
+    color: #2563EB;
+    font-family: cousine;
+
+}
+
+.seta_procurados{
+    text-decoration: none;
+    color: #64748B;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.seta_procurados:hover{
+    
+    transform: scale(1.5);
+
+}
+
+
+
+
+
+
