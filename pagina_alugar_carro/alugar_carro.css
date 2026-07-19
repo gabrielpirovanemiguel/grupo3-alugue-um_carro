@@ -175,6 +175,7 @@ main {
     height: fit-content;
     width: 304px;
     padding: 20px;
+    color: var(--cor_5);
 }
 
 .imagem h3 {
@@ -253,7 +254,7 @@ main {
 
 }
 
-.desativado {
+.container_desativado {
     opacity: 0.4;
 }
 
