@@ -18,11 +18,11 @@
             <p>RESERVA</p>
             <h1>RESERVAR VEÍCULO</h1>
         </div>
-        <section class="form_imagem">
-            <form action="" class="form" method="post">
-                <div class="container">
+        <section class="formulario_imagem">
+            <form action="" class="formulario" method="post">
+                <div class="container_formulario">
                     <h2>Dados Pessoais</h2>
-                    <div class="form_linha">
+                    <div class="linha_formulario">
                         <div>
                             <label for="nome">NOME COMPLETO</label>
                             <input type="text" name="nome" id="nome" required>
@@ -32,7 +32,7 @@
                             <input type="text" name="cpf" id="cpf" required>
                         </div>
                     </div>
-                    <div class="form_linha">
+                    <div class="linha_formulario">
                         <div>
                             <label for="email">E-MAIL</label>
                             <input type="email" name="email" id="email" required>
@@ -43,9 +43,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container_formulario">
                     <h2>Dados da Reserva</h2>
-                    <div class="form_linha">
+                    <div class="linha_formulario">
                         <div>
                             <label for="veiculo">VEÍCULO</label>
                             <input type="text" name="veiculo" id="veiculo" value="" disabled>
@@ -55,7 +55,7 @@
                             <input type="text" name="local_devolucao" id="local_devolucao">
                         </div>
                     </div>
-                    <div class="form_linha inputs_data">
+                    <div class="linha_formulario inputs_data">
                         <div>
                             <label for="data_retirada">DATA DE RETIRADA</label>
                             <input type="date" name="data_retirada" id="data_retirada" required>
@@ -66,9 +66,9 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="CONFIRMAR RESERVAR" id="btn_reservar">
+                <input type="submit" value="CONFIRMAR RESERVAR" id="botao_reservar">
             </form>
-            <div class="container imagem">
+            <div class="container_formulario imagem">
                 <h3>RESUMO</h3>
                 <figure>
                     <img src="./teste.png" alt="" id="imagem_carro">

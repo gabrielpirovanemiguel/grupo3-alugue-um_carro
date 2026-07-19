@@ -33,7 +33,7 @@ main {
 
 /* FORM E IMAGEM */
 
-.form_imagem {
+.formulario_imagem {
     display: flex;
     flex-direction: row;
     padding-top: 40px;
@@ -41,7 +41,7 @@ main {
     flex: 1;
 }
 
-.form {
+.formulario {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -49,7 +49,7 @@ main {
 
 }
 
-.form h2 {
+.formulario h2 {
     font-family: 'barlow Condensed';
     font-weight: 900;
     font-style: Black;
@@ -60,7 +60,7 @@ main {
     padding-bottom: 20px;
 }
 
-#btn_reservar {
+#botao_reservar {
     width: 100%;
     height: 60px;
     font-family: 'inter';
@@ -77,22 +77,22 @@ main {
 
 }
 
-#btn_reservar:hover {
+#botao_reservar:hover {
     opacity: 0.9;
     transform: scale(1.01);
 }
 
-#btn_reservar:active {
+#botao_reservar:active {
     background-color: blue;
     opacity: 0.95;
     transform: scale(1.01);
 }
 
-.container form:nth-child(2) {
+.container_formulario form:nth-child(2) {
     padding: 24px 0;
 }
 
-.container {
+.container_formulario {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -102,7 +102,7 @@ main {
     border: 1px solid #2563EB26
 }
 
-.form_linha {
+.linha_formulario {
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -110,13 +110,13 @@ main {
     justify-content: center;
 }
 
-.form_linha div {
+.linha_formulario div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.form_linha label {
+.linha_formulario label {
     padding-bottom: 6px;
     font-family: 'cousine';
     font-weight: 400;
@@ -128,7 +128,7 @@ main {
 
 }
 
-.form_linha input{
+.linha_formulario input{
     width: 100%;
     height: 42px;
     padding: 10px 16px;
@@ -146,14 +146,14 @@ main {
     
 }
 
-.form_linha input::-webkit-calendar-picker-indicator {
+.linha_formulario input::-webkit-calendar-picker-indicator {
     filter: invert(1); 
     cursor: pointer;
 }
 
-.form_linha input:-webkit-autofill,
-.form_linha input:-webkit-autofill:hover,
-.form_linha input:-webkit-autofill:focus {
+.linha_formulario input:-webkit-autofill,
+.linha_formulario input:-webkit-autofill:hover,
+.linha_formulario input:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--cor_7);
     transition: background-color 5000s ease-in-out 0s;
 }
