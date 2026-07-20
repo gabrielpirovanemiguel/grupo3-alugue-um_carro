@@ -15,7 +15,7 @@ async function carregarDadosIntroducao() {
             const estaDisponivel = carro.status_disponibilidade === 'disponivel';
             const tagStatus = estaDisponivel
                 ? `<span class="tag_disponivel">● Disponível</span>`
-                : `<span class="tag_indisponivel">● Ocupado</span>`;
+                : `<span class="tag_indisponivel">● Indisponível</span>`;
 
             const bannerCard = `
                 <a href="../pagina_individual_carro/PaginaIndividual.html?id=${carro.id}" class="card_imagem_banner">
