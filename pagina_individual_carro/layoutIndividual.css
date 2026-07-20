@@ -284,3 +284,15 @@ body {
     font-weight: 600;
     color: #F1F5F9;
 }
+
+.desativado {
+    color: var(--cor_6);
+    background-color: var(--cor_8);
+}
+
+.desativado:hover {
+    transform: scale(1);
+    cursor: default;
+    color: var(--cor_6);
+    background-color: var(--cor_8);
+}

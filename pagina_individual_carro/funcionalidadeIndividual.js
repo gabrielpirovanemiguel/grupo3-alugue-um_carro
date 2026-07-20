@@ -1,3 +1,5 @@
+let estaDisponivel;
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,7 +24,7 @@ async function carregarDadosDoCarro(id) {
         }
 
         const carro = await resposta.json();
-
+        estaDisponivel = carro.status_disponibilidade;
 
         atualizarInterface(carro);
 
@@ -89,6 +91,11 @@ function atualizarInterface(carro) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const botaoReservar = document.getElementById("botao_reservar");
+    if(estaDisponivel !== 'disponivel') {
+        botaoReservar.classList.add('desativado');
+        botaoReservar.textContent = 'Indisponível';
+        return;
+    }
 
     if (botaoReservar) {
         botaoReservar.addEventListener("click", () => {
