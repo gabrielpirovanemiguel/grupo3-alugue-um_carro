@@ -1,14 +1,11 @@
 async function carregarDadosIntroducao() {
     try {
-        // Aponta para a porta do seu json-server e busca o nó "carros"
         const resposta = await fetch('http://localhost:3001/carros');
         const carros = await resposta.json();
 
-        // Seleciona o container do banner
         const introducaoContainer = document.querySelector('.introducao_imagens');
-        introducaoContainer.innerHTML = ''; // Limpa o container antigo
+        introducaoContainer.innerHTML = ''; 
 
-        // Pega os 4 primeiros carros para o mosaico (ex: McQueen, Mate, Doc, Sally)
         const veiculosBanner = carros.slice(0, 4);
 
         veiculosBanner.forEach(carro => {
