@@ -178,6 +178,9 @@
     text-decoration: none;
     color: #2563EB;
     background: #2563EB1A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
