@@ -1,7 +1,7 @@
 async function carregarDadosIntroducao() {
     try {
         // Aponta para a porta do seu json-server e busca o nó "carros"
-        const resposta = await fetch('http://localhost:3000/carros');
+        const resposta = await fetch('http://localhost:3001/carros');
         const carros = await resposta.json();
 
         // Seleciona o container do banner
@@ -39,7 +39,7 @@ carregarDadosIntroducao();
 
 async function carregarDadosDestaques() {
     try{
-        const resposta = await fetch('http://localhost:3000/carros');
+        const resposta = await fetch('http://localhost:3001/carros');
         const veiculos = await resposta.json();
 
         const destaques_container = document.getElementById("card_destaques_container");
@@ -76,7 +76,7 @@ async function carregarDadosDestaques() {
                     : `<span class="tag_indisponivel">● Indisponível</span>`;
 
                 const botaoAcao = estaDisponivel
-                    ? `<button class="botao_alugar">Alugar</button>`
+                    ? `<a href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}" class="botao_alugar">Alugar</a>`
                     : `<button class="botao_indisponivel" disabled>Indisponível</button>` // desativar
         
 
@@ -105,7 +105,9 @@ async function carregarDadosDestaques() {
 
                     <div class="botoes_destaques">
                         ${botaoAcao}
-                        <button class="botao_calendario"><i class="ph ph-calendar-blank"></i></button>
+                        ${estaDisponivel? `<a href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}" class="botao_calendario"><i class="ph ph-calendar-blank"></i></a>`:
+                         `<a class="botao_calendario desativadoocupado"><i class="ph ph-calendar-blank"></i></a>`}
+                       
                     </div>
                 
                 </div>
@@ -115,7 +117,7 @@ async function carregarDadosDestaques() {
         });
         destaques_container.innerHTML=cardDestaques
     
-    } catch (error) {
+    } catch (erro) {
         console.error("Erro ao carregar os veículos:", erro);
         
     }
@@ -125,7 +127,7 @@ carregarDadosDestaques();
 
 async function carregarDadosProcurados(){
     try {
-        const resposta = await fetch('http://localhost:3000/carros');
+        const resposta = await fetch('http://localhost:3001/carros');
         const veiculos = await resposta.json();
 
         const procuradosContainer = document.getElementById('container_cards_procurados');
@@ -177,7 +179,7 @@ async function carregarDadosProcurados(){
                         ${tagStatus}
                         <span class="preco_procurados">${precoFormatado}/dia</span>
                         
-                        <a href="#" class="seta_procurados">
+                        <a href="/pagina_alugar_carro/alugar_carro.html?id=${carro.id}" class="seta_procurados">
                             <i class="ph ph-caret-right"></i>
                         </a>
                     </div>
