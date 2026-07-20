@@ -311,6 +311,7 @@
     color: #64748B;
     border: 1.25px solid #64748b33;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
     
 }
 
