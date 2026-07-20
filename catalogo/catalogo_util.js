@@ -1,4 +1,4 @@
-import { obterCarrosPaginado } from "../templates/js/api.js";
+import { obterCarrosPaginado, pesquisarNome } from "../templates/js/api.js";
 
 export function fazerCard(carro) {
     const htmlCard = `
@@ -111,7 +111,7 @@ export async function atualizarCatalogo(pagina, query = null, termoPesquisa = nu
     adicionarBotoesPaginacao(response.totalPaginas, containerBotaoPaginas, pagina, botoesSeta[0], botoesSeta[1]);
 }
 
-export async function ativarFiltro(query, botao) {
+export async function ativarFiltro(query, botao, paginaAtual, termoPesquisa) {
     await atualizarCatalogo(paginaAtual, query, termoPesquisa);
     botao.classList.add('ativo');
 }

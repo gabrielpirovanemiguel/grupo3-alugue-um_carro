@@ -54,7 +54,7 @@ containerFiltro.addEventListener('click', async function (evento) {
         default:
             query = `categoria=${botaoAtual}`;
     }
-    ativarFiltro(query, evento.target);
+    ativarFiltro(query, evento.target, paginaAtual, termoPesquisa);
 });
 
 containerSetas.addEventListener('click', async function (evento) {
