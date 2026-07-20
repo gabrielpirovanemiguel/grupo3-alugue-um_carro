@@ -1,3 +1,5 @@
+import { obterCarrosPaginado } from "../templates/js/api.js";
+
 export function fazerCard(carro) {
     const htmlCard = `
             <div class="card">
@@ -59,7 +61,7 @@ export function adicionarBotoesPaginacao(totalPaginas, container, pagina, btnVol
         btnVoltar.classList.add('desativado');
         btnAvancar.classList.add('desativado');
         return;
-    } else if(totalPaginas === 0) {
+    } else if (totalPaginas === 0) {
         btnVoltar.style.display = 'none';
         btnAvancar.style.display = 'nome';
         return;
@@ -91,4 +93,26 @@ export function desfocarBotoes(botoes) {
     })
 }
 
+export async function atualizarCatalogo(pagina, query = null, termoPesquisa = null) {
+    const sessaoCards = document.querySelector('.sessao_cards');
+    const containerBotaoPaginas = document.querySelector('.botao_paginas');
+    const botoesSeta = document.querySelectorAll('.seta');
+    let response;
+    if (termoPesquisa) {
+        response = await pesquisarNome(pagina, termoPesquisa, query);
+    } else {
+        response = await obterCarrosPaginado(pagina, query);
+    }
+    sessaoCards.innerHTML = '';
+    response.dados.forEach(carro => {
+        const card = fazerCard(carro);
+        sessaoCards.insertAdjacentHTML('beforeend', card);
+    });
+    adicionarBotoesPaginacao(response.totalPaginas, containerBotaoPaginas, pagina, botoesSeta[0], botoesSeta[1]);
+}
+
+export async function ativarFiltro(query, botao) {
+    await atualizarCatalogo(paginaAtual, query, termoPesquisa);
+    botao.classList.add('ativo');
+}
 
