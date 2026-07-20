@@ -40,7 +40,7 @@ function montarCard(carro, container) {
                         </div>
                     </div>
                     <div class="reserva_acoes">
-                        <button class="botao_acao botao_detalhes">Ver Detalhes</button>
+                        <a href="../pagina_individual_carro/paginaIndividual.html?id=${carro.id}" class="botao_acao botao_detalhes">Ver Detalhes</a>
                         ${statusReserva[1] ? `<button class="botao_acao botao_cancelar" value="${carro.id}">Cancelar</button>`: ''}
                     </div>
         </div>

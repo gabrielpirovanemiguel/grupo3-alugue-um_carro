@@ -26,8 +26,8 @@ const headerCorrigido = htmlHeader
     .replace('href="/inicio/inicio.html"', `href="${prefixoRaiz}inicio/inicio.html"`)
     .replace('href="/catalogo/catalogo.html"', `href="${prefixoRaiz}catalogo/catalogo.html"`)
     .replace('href="/reservas/reservas.html"', `href="${prefixoRaiz}reservas/reservas.html"`)
-    .replace('href="/sobre/sobre.html"', `href="${prefixoRaiz}Sobre/Sobre.html"`)
-    .replace('href="/contato/contato.html"', `href="${prefixoRaiz}Contato/Contato.html"`)
+    .replace('href="/sobre/sobre.html"', `href="${prefixoRaiz}sobre/sobre.html"`)
+    .replace('href="/contato/contato.html"', `href="${prefixoRaiz}contato/contato.html"`)
     // Aproveita e corrige também o botão "Explorar" para ir direto para o catálogo
     .replace('href="" id="btn_explorar"', `href="${prefixoRaiz}catalogo/catalogo.html" id="btn_explorar"`);
 

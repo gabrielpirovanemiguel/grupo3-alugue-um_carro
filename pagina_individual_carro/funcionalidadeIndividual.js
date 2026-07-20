@@ -1,3 +1,5 @@
+let estaDisponivel;
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -15,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 async function carregarDadosDoCarro(id) {
     try {
 
-        const resposta = await fetch(`http://localhost:3000/carros/${id}`);
+        const resposta = await fetch(`http://localhost:3001/carros/${id}`);
 
         if (!resposta.ok) {
             throw new Error("Não foi possível encontrar este veículo no banco de dados.");
         }
 
         const carro = await resposta.json();
-
+        estaDisponivel = carro.status_disponibilidade;
 
         atualizarInterface(carro);
 
@@ -89,6 +91,11 @@ function atualizarInterface(carro) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const botaoReservar = document.getElementById("botao_reservar");
+    if(estaDisponivel !== 'disponivel') {
+        botaoReservar.classList.add('desativado');
+        botaoReservar.textContent = 'Indisponível';
+        return;
+    }
 
     if (botaoReservar) {
         botaoReservar.addEventListener("click", () => {
@@ -98,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (carroId) {
 
-                window.location.href = `../pagina_reserva/PaginaReserva.html?id=${carroId}`;
+                window.location.href = `../pagina_alugar_carro/alugar_carro.html?id=${carroId}`;
             } else {
                 alert("Erro: Não foi possível identificar o veículo para reserva.");
             }
